@@ -1,0 +1,196 @@
+fileFormatVersion: 2
+guid: 2c9905fc8f65a4003856f80c2d000216
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: detail_bullbar_37
+    100004: detail_engine_49
+    100006: detail_exhaustVertical_35
+    100008: detail_exhaustVertical_36
+    100010: detail_fenderRounded_51
+    100012: detail_fenderRounded_52
+    100014: detail_fenderSquare_31
+    100016: detail_fenderSquare_32
+    100018: detail_fenderSquare_33
+    100020: detail_fenderSquare_34
+    100022: engine_intakeArrow_48
+    100024: hood_truck_24
+    100026: trunk_station_22
+    100028: wall_paperFrame_46
+    100030: wall_paperFrame_47
+    100032: windshield_square_23
+    400000: //RootNode
+    400002: detail_bullbar_37
+    400004: detail_engine_49
+    400006: detail_exhaustVertical_35
+    400008: detail_exhaustVertical_36
+    400010: detail_fenderRounded_51
+    400012: detail_fenderRounded_52
+    400014: detail_fenderSquare_31
+    400016: detail_fenderSquare_32
+    400018: detail_fenderSquare_33
+    400020: detail_fenderSquare_34
+    400022: engine_intakeArrow_48
+    400024: hood_truck_24
+    400026: trunk_station_22
+    400028: wall_paperFrame_46
+    400030: wall_paperFrame_47
+    400032: windshield_square_23
+    2100000: tire
+    2100002: _defaultMat
+    2100004: lightRed
+    2100006: blueSteel
+    2100008: black
+    2100010: light
+    2100012: orangeSteel
+    2100014: glass
+    2100016: wood
+    2300000: detail_bullbar_37
+    2300002: detail_engine_49
+    2300004: detail_exhaustVertical_35
+    2300006: detail_exhaustVertical_36
+    2300008: detail_fenderRounded_51
+    2300010: detail_fenderRounded_52
+    2300012: detail_fenderSquare_31
+    2300014: detail_fenderSquare_32
+    2300016: detail_fenderSquare_33
+    2300018: detail_fenderSquare_34
+    2300020: engine_intakeArrow_48
+    2300022: hood_truck_24
+    2300024: trunk_station_22
+    2300026: wall_paperFrame_46
+    2300028: wall_paperFrame_47
+    2300030: windshield_square_23
+    3300000: detail_bullbar_37
+    3300002: detail_engine_49
+    3300004: detail_exhaustVertical_35
+    3300006: detail_exhaustVertical_36
+    3300008: detail_fenderRounded_51
+    3300010: detail_fenderRounded_52
+    3300012: detail_fenderSquare_31
+    3300014: detail_fenderSquare_32
+    3300016: detail_fenderSquare_33
+    3300018: detail_fenderSquare_34
+    3300020: engine_intakeArrow_48
+    3300022: hood_truck_24
+    3300024: trunk_station_22
+    3300026: wall_paperFrame_46
+    3300028: wall_paperFrame_47
+    3300030: windshield_square_23
+    4300000: detail_bullbar_37
+    4300002: detail_engine_49
+    4300004: detail_exhaustVertical_35
+    4300006: detail_exhaustVertical_36
+    4300008: detail_fenderRounded_51
+    4300010: detail_fenderRounded_52
+    4300012: detail_fenderSquare_31
+    4300014: detail_fenderSquare_32
+    4300016: detail_fenderSquare_33
+    4300018: detail_fenderSquare_34
+    4300020: engine_intakeArrow_48
+    4300022: hood_truck_24
+    4300024: trunk_station_22
+    4300026: wall_paperFrame_46
+    4300028: wall_paperFrame_47
+    4300030: windshield_square_23
+    11400000: //RootNode
+    11400002: //RootNode
+    11400004: detail_bullbar_37
+    11400006: detail_engine_49
+    11400008: detail_exhaustVertical_35
+    11400010: detail_exhaustVertical_36
+    11400012: detail_fenderRounded_51
+    11400014: detail_fenderRounded_52
+    11400016: detail_fenderSquare_31
+    11400018: detail_fenderSquare_32
+    11400020: detail_fenderSquare_33
+    11400022: detail_fenderSquare_34
+    11400024: engine_intakeArrow_48
+    11400026: hood_truck_24
+    11400028: trunk_station_22
+    11400030: wall_paperFrame_46
+    11400032: wall_paperFrame_47
+    11400034: windshield_square_23
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: 09e64466acbe94caf9b481b85cd65501
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: cylinder_hollow_20
+    100004: cylinder_hollow_21
+    100006: detail_antenna_16
+    100008: detail_bumper_17
+    100010: detail_bumper_19
+    100012: detail_policeLights_10
+    100014: hood_default_5
+    100016: trunk_square_7
+    100018: windshield_square_4
+    400000: //RootNode
+    400002: cylinder_hollow_20
+    400004: cylinder_hollow_21
+    400006: detail_antenna_16
+    400008: detail_bumper_17
+    400010: detail_bumper_19
+    400012: detail_policeLights_10
+    400014: hood_default_5
+    400016: trunk_square_7
+    400018: windshield_square_4
+    2100000: _defaultMat
+    2100002: tire
+    2100004: lightBlue
+    2100006: lightRed
+    2100008: customMaterial10
+    2100010: customMaterial8
+    2100012: light
+    2100014: customMaterial9
+    2100016: glass
+    2300000: cylinder_hollow_20
+    2300002: cylinder_hollow_21
+    2300004: detail_antenna_16
+    2300006: detail_bumper_17
+    2300008: detail_bumper_19
+    2300010: detail_policeLights_10
+    2300012: hood_default_5
+    2300014: trunk_square_7
+    2300016: windshield_square_4
+    3300000: cylinder_hollow_20
+    3300002: cylinder_hollow_21
+    3300004: detail_antenna_16
+    3300006: detail_bumper_17
+    3300008: detail_bumper_19
+    3300010: detail_policeLights_10
+    3300012: hood_default_5
+    3300014: trunk_square_7
+    3300016: windshield_square_4
+    4300000: cylinder_hollow_20
+    4300002: cylinder_hollow_21
+    4300004: detail_antenna_16
+    4300006: detail_bumper_17
+    4300008: detail_bumper_19
+    4300010: detail_policeLights_10
+    4300012: hood_default_5
+    4300014: trunk_square_7
+    4300016: windshield_square_4
+    11400000: //RootNode
+    11400002: //RootNode
+    11400004: cylinder_hollow_20
+    11400006: cylinder_hollow_21
+    11400008: detail_antenna_16
+    11400010: detail_bumper_17
+    11400012: detail_bumper_19
+    11400014: detail_policeLights_10
+    11400016: hood_default_5
+    11400018: trunk_square_7
+    11400020: windshield_square_4
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
