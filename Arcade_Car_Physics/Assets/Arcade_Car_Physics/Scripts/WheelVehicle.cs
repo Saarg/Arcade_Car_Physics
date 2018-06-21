@@ -9,6 +9,7 @@ namespace VehicleBehaviour {
         
         [Header("Inputs")]
         [SerializeField] bool isPlayer = true;
+        public bool IsPlayer { get{ return isPlayer; } set{ isPlayer = value; } }        
         [SerializeField] string throttleInput = "Throttle";
         [SerializeField] string brakeInput = "Brake";
         [SerializeField] string turnInput = "Horizontal";
@@ -46,11 +47,17 @@ namespace VehicleBehaviour {
         [SerializeField] float downforce = 1.0f;        
 
         // External inputs
-        public float steering { get; set; }
-        public float throttle { get; set; }
+        float steering;
+        public float Steering { get{ return steering; } set{ steering = value; } } 
 
-        public bool handbreak { get; set; }
-        public bool drift { get; set; }
+        float throttle;
+        public float Throttle { get{ return throttle; } set{ throttle = value; } } 
+
+        [SerializeField] bool handbrake;
+        public bool Handbrake { get{ return handbrake; } set{ handbrake = value; } } 
+        
+        bool drift;
+        public bool Drift { get{ return drift; } }         
 
         [SerializeField] float speed = 0.0f;
         public float Speed { get{ return speed; } }
@@ -102,7 +109,7 @@ namespace VehicleBehaviour {
             foreach (ParticleSystem gasParticle in gasParticles)
             {
                 ParticleSystem.EmissionModule em = gasParticle.emission;
-                em.rateOverTime = handbreak ? 0 : Mathf.Lerp(em.rateOverTime.constant, Mathf.Clamp(10.0f * throttle, 5.0f, 10.0f), 0.1f);
+                em.rateOverTime = handbrake ? 0 : Mathf.Lerp(em.rateOverTime.constant, Mathf.Clamp(10.0f * throttle, 5.0f, 10.0f), 0.1f);
             }
 
             if (isPlayer) {
@@ -140,7 +147,7 @@ namespace VehicleBehaviour {
             }
 
             // Handbrake
-            if (handbreak)
+            if (handbrake)
             {
                 foreach (WheelCollider wheel in wheels)
                 {
@@ -239,7 +246,7 @@ namespace VehicleBehaviour {
 
         public void toogleHandbrake(bool h)
         {
-            handbreak = h;
+            handbrake = h;
         }
     }
 }

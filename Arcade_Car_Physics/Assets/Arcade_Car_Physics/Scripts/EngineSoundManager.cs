@@ -29,13 +29,13 @@ namespace VehicleBehaviour {
         }
         
         void Update () {
-            if (_vehicle.handbreak && _source.clip == rolling)
+            if (_vehicle.Handbrake && _source.clip == rolling)
             {
                 _source.clip = stopping;
                 _source.Play();
             }
 
-            if (!_vehicle.handbreak && (_source.clip == stopping || _source.clip == null))
+            if (!_vehicle.Handbrake && (_source.clip == stopping || _source.clip == null))
             {
                 _source.clip = starting;
                 _source.Play();
@@ -43,7 +43,7 @@ namespace VehicleBehaviour {
                 _source.pitch = 1;
             }
 
-            if (!_vehicle.handbreak && !_source.isPlaying)
+            if (!_vehicle.Handbrake && !_source.isPlaying)
             {
                 _source.clip = rolling;
                 _source.Play();

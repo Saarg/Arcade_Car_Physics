@@ -62,7 +62,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1143599206938968
 GameObject:
   m_ObjectHideFlags: 1
@@ -273,8 +273,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4302854969254766}
-  - component: {fileID: 114046714595533806}
-  - component: {fileID: 114607822569868032}
   m_Layer: 10
   m_Name: Wheel01
   m_TagString: Untagged
@@ -495,7 +493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1771725691896326
 GameObject:
   m_ObjectHideFlags: 1
@@ -504,8 +502,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4343969656816066}
-  - component: {fileID: 114011856603226974}
-  - component: {fileID: 114822730952609536}
   m_Layer: 10
   m_Name: Wheel01
   m_TagString: Untagged
@@ -598,7 +594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1909130540855156
 GameObject:
   m_ObjectHideFlags: 1
@@ -669,7 +665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4023411105908788
 Transform:
   m_ObjectHideFlags: 1
@@ -2574,28 +2570,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114011856603226974
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1771725691896326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114046714595533806
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1441411473162956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114175581144122706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2637,7 +2611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c241727a8fc83048b56bdd0b450f8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 0
+  isPlayer: 1
   throttleInput: Vertical
   brakeInput: Fire3
   turnInput: Horizontal
@@ -2732,6 +2706,7 @@ MonoBehaviour:
   driftIntensity: 1
   centerOfMass: {fileID: 4023411105908788}
   downforce: 2
+  handbrake: 0
   speed: 0
   gasParticles:
   - {fileID: 198447643681245540}
@@ -2746,17 +2721,6 @@ MonoBehaviour:
   - {fileID: 198351796058775852}
   boostClip: {fileID: 8300000, guid: 7c29c309722a2444582a425e8e6aeb77, type: 3}
   boostSource: {fileID: 82549502214601300}
---- !u!114 &114607822569868032
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1441411473162956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114651975980116700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2789,17 +2753,6 @@ MonoBehaviour:
   trailing: 0
   parent: {fileID: 4343969656816066}
   offset: {x: 0, y: -0.28, z: 0}
---- !u!114 &114822730952609536
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1771725691896326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114854141276375558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21159,7 +21112,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: e646da43bf70b4fa299d11c7b6d8bb86, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -21215,7 +21168,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: e646da43bf70b4fa299d11c7b6d8bb86, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -21271,7 +21224,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: e646da43bf70b4fa299d11c7b6d8bb86, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -21327,7 +21280,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: e646da43bf70b4fa299d11c7b6d8bb86, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
