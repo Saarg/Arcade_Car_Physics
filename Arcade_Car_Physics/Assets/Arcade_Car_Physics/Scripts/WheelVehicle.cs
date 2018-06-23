@@ -227,9 +227,7 @@ namespace VehicleBehaviour {
 
 
                 _rb.AddForce(driftForce * driftIntensity, ForceMode.Force);
-                _rb.AddTorque(driftTorque * driftIntensity, ForceMode.VelocityChange);
-
-                Debug.DrawLine(transform.position, transform.position + driftForce, Color.red);              
+                _rb.AddTorque(driftTorque * driftIntensity, ForceMode.VelocityChange);             
             }
 
             // Downforce
