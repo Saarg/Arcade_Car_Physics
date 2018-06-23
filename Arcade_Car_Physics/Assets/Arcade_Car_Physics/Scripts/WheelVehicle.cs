@@ -108,8 +108,9 @@ namespace VehicleBehaviour {
         {
             foreach (ParticleSystem gasParticle in gasParticles)
             {
+                gasParticle.Play();
                 ParticleSystem.EmissionModule em = gasParticle.emission;
-                em.rateOverTime = handbrake ? 0 : Mathf.Lerp(em.rateOverTime.constant, Mathf.Clamp(10.0f * throttle, 5.0f, 10.0f), 0.1f);
+                em.rateOverTime = handbrake ? 0 : Mathf.Lerp(em.rateOverTime.constant, Mathf.Clamp(150.0f * throttle, 30.0f, 100.0f), 0.1f);
             }
 
             if (isPlayer) {

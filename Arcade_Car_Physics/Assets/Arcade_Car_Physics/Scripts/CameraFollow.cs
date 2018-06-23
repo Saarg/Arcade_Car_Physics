@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Utils {
+namespace VehicleBehaviour.Utils {
 	public class CameraFollow : MonoBehaviour {
 		[SerializeField] bool follow = false;
 		public bool Follow { get { return follow; } set { follow = value; } }
