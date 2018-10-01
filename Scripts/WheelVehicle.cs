@@ -3,11 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+#if MULTIOSCONTROLS
+    using MOSC;
+#endif
+
 namespace VehicleBehaviour {
     [RequireComponent(typeof(Rigidbody))]
     public class WheelVehicle : MonoBehaviour {
         
         [Header("Inputs")]
+    #if MULTIOSCONTROLS
+        [SerializeField] PlayerNumber playerId;
+    #endif
         [SerializeField] bool isPlayer = true;
         public bool IsPlayer { get{ return isPlayer; } set{ isPlayer = value; } }        
         [SerializeField] string throttleInput = "Throttle";
@@ -86,6 +93,9 @@ namespace VehicleBehaviour {
         WheelCollider[] wheels;
 
         void Start() {
+#if MULTIOSCONTROLS
+            Debug.Log("[ACP] Using MultiOSControls");
+#endif
             if (boostClip != null) {
                 boostSource.clip = boostClip;
             }
@@ -126,14 +136,14 @@ namespace VehicleBehaviour {
                 // Accelerate & brake
                 if (throttleInput != "" && throttleInput != null)
                 {
-                    throttle = Input.GetAxis(throttleInput) - Input.GetAxis(brakeInput);
+                    throttle = GetInput(throttleInput) - GetInput(brakeInput);
                 }
                 // Boost
-                boosting = (Input.GetAxis(boostInput) > 0.5f);
+                boosting = (GetInput(boostInput) > 0.5f);
                 // Turn
-                steering = turnInputCurve.Evaluate(Input.GetAxis(turnInput)) * steerAngle;
+                steering = turnInputCurve.Evaluate(GetInput(turnInput)) * steerAngle;
                 // Dirft
-                drift = Input.GetAxis(driftInput) > 0 && _rb.velocity.sqrMagnitude > 100;
+                drift = GetInput(driftInput) > 0 && _rb.velocity.sqrMagnitude > 100;
             }
 
             // Direction
@@ -174,7 +184,7 @@ namespace VehicleBehaviour {
             }
 
             // Jump
-            if (Input.GetAxis(jumpInput) > 0 && isPlayer) {
+            if (GetInput(jumpInput) > 0 && isPlayer) {
                 bool isGrounded = true;
                 foreach (WheelCollider wheel in wheels)
                 {
@@ -246,6 +256,17 @@ namespace VehicleBehaviour {
         public void toogleHandbrake(bool h)
         {
             handbrake = h;
+        }
+
+#if MULTIOSCONTROLS
+        private static MultiOSControls _controls;
+#endif
+        private float GetInput(string input) {
+#if MULTIOSCONTROLS
+        return MultiOSControls.GetValue(input, playerId);
+#else
+        return GetInput(input);
+#endif
         }
     }
 }
