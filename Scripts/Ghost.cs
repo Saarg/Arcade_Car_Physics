@@ -30,24 +30,38 @@ namespace VehicleBehaviour
 		public bool run;
 		float _startTime = 0;
 
-		public int duration 
+		public float duration 
 		{ internal set; get;}
 		public int freq
 		{ internal set; get;}
 
+		public bool exist 
+		{ internal set; get;} = false;
+
+		WheelVehicle _vehicle;
+		Rigidbody _rb;
+
 		// Use this for initialization
 		void Start () 
 		{
+			Debug.Log(Application.persistentDataPath + "/" + SceneManager.GetActiveScene().name + "-BestTime");
 			if (File.Exists(Application.persistentDataPath + "/" + SceneManager.GetActiveScene().name + "-BestTime"))
 			{
 				IFormatter formatter = new BinaryFormatter();
 				Stream stream = new FileStream(Application.persistentDataPath + "/" + SceneManager.GetActiveScene().name + "-BestTime", FileMode.Open, FileAccess.Read, FileShare.Read);
-				duration = (int)formatter.Deserialize(stream);
+				duration = (float)formatter.Deserialize(stream);
 				freq = (int)formatter.Deserialize(stream);
 
 				_data = (List<GhostData>)formatter.Deserialize(stream);
 				stream.Close();
+
+				exist = true;
 			}
+			else
+				exist = false;
+
+			_vehicle = GetComponent<WheelVehicle>();
+			_rb = GetComponent<Rigidbody>();
 		}
 		
 		// Update is called once per frame
@@ -56,7 +70,7 @@ namespace VehicleBehaviour
 			float time = Time.realtimeSinceStartup - _startTime;
 			int index = (int)(time * freq);
 
-			if (run && time < duration && _data != null && index < _data.Count)
+			if (run && time < duration && _data != null && index < _data.Count - 1)
 			{
 				if (_startTime == 0)
 					_startTime = Time.realtimeSinceStartup;
@@ -71,6 +85,21 @@ namespace VehicleBehaviour
 				Quaternion rot = new Quaternion(d.rotation[0], d.rotation[1], d.rotation[2], d.rotation[3]);
 				Quaternion rotf = new Quaternion(df.rotation[0], df.rotation[1], df.rotation[2], df.rotation[3]);
 				transform.rotation = Quaternion.Lerp(rot, rotf, (time * freq) - index);
+
+				if (_vehicle != null)
+				{
+					_vehicle.Throttle = d.throttle;
+					_vehicle.Steering = d.steering;
+					_vehicle.boosting = d.boost;
+					_vehicle.Drift = d.drift;
+				}
+
+				if (_rb != null)
+				{
+					Vector3 speed = new Vector3(d.speed[0], d.speed[1], d.speed[2]);
+					Vector3 speedf = new Vector3(df.speed[0], df.speed[1], df.speed[2]);
+					_rb.velocity = Vector3.Lerp(speed, speedf, (time * freq) - index);
+				}
 			}
 		}
 	}
@@ -82,14 +111,14 @@ namespace VehicleBehaviour
 		Rigidbody _vehicleR = null;
 		List<GhostData> _data = null;
 
-		public int duration 
+		public float duration 
 		{ internal set; get;}
 		public int freq
 		{ internal set; get;}
 		
-		public bool requestStop = false;
+		bool requestStop = false;
 
-		public GhostRecorder(int duration, int freq, ref WheelVehicle vehicle)
+		public GhostRecorder(float duration, int freq, ref WheelVehicle vehicle)
 		{
 			_vehicle = vehicle;
 			_vehicleT = vehicle.transform;
@@ -99,14 +128,14 @@ namespace VehicleBehaviour
 			this.duration = duration;
 			this.freq = freq;
 
-			_data = new List<GhostData>(this.duration * this.freq);
+			_data = new List<GhostData>((int)(this.duration * this.freq));
 		}
 
+		float _startTime = Time.realtimeSinceStartup;
 		public IEnumerator RecordCoroutine(bool allowOverTime = false)
 		{
 			WaitForSeconds wait = new WaitForSeconds(1.0f/freq);
-			float startTime = Time.realtimeSinceStartup;
-
+			
 			Debug.Log("Recording ghost for " + _vehicle.name);
 
 			while (!requestStop && _data.Count <= _data.Capacity)
@@ -140,6 +169,12 @@ namespace VehicleBehaviour
 			}
 
 			Debug.Log("Finished recording ghost for " + _vehicle.name);
+		}
+
+		public void Stop()
+		{
+			duration = Time.realtimeSinceStartup - _startTime;
+			requestStop = true;
 		}
 
 		public void Save()

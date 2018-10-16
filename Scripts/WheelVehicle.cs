@@ -64,7 +64,7 @@ namespace VehicleBehaviour {
         public bool Handbrake { get{ return handbrake; } set{ handbrake = value; } } 
         
         bool drift;
-        public bool Drift { get{ return drift; } }         
+        public bool Drift { get{ return drift; } set{ drift = value; } }         
 
         [SerializeField] float speed = 0.0f;
         public float Speed { get{ return speed; } }
