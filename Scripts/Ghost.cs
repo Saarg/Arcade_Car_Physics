@@ -38,19 +38,22 @@ namespace VehicleBehaviour
 		public bool exist 
 		{ internal set; get;} = false;
 
+		public float score
+		{ internal set; get;}
+
 		WheelVehicle _vehicle;
 		Rigidbody _rb;
 
 		// Use this for initialization
 		void Start () 
 		{
-			Debug.Log(Application.persistentDataPath + "/" + SceneManager.GetActiveScene().name + "-BestTime");
 			if (File.Exists(Application.persistentDataPath + "/" + SceneManager.GetActiveScene().name + "-BestTime"))
 			{
 				IFormatter formatter = new BinaryFormatter();
 				Stream stream = new FileStream(Application.persistentDataPath + "/" + SceneManager.GetActiveScene().name + "-BestTime", FileMode.Open, FileAccess.Read, FileShare.Read);
 				duration = (float)formatter.Deserialize(stream);
 				freq = (int)formatter.Deserialize(stream);
+				score = (float)formatter.Deserialize(stream);
 
 				_data = (List<GhostData>)formatter.Deserialize(stream);
 				stream.Close();
@@ -118,6 +121,8 @@ namespace VehicleBehaviour
 		
 		bool requestStop = false;
 
+		public float score;
+
 		public GhostRecorder(float duration, int freq, ref WheelVehicle vehicle)
 		{
 			_vehicle = vehicle;
@@ -183,6 +188,7 @@ namespace VehicleBehaviour
             Stream stream = new FileStream(Application.persistentDataPath + "/" + SceneManager.GetActiveScene().name + "-BestTime", FileMode.Create, FileAccess.Write, FileShare.None);
 			formatter.Serialize(stream, duration);
 			formatter.Serialize(stream, freq);
+            formatter.Serialize(stream, score);
             formatter.Serialize(stream, _data);
             stream.Close();
 
