@@ -43,25 +43,33 @@ namespace VehicleBehaviour
 
 		WheelVehicle _vehicle;
 		Rigidbody _rb;
+		
+		[SerializeField] string[] _saveFileNames;
 
 		// Use this for initialization
 		void Start () 
 		{
-			if (File.Exists(Application.persistentDataPath + "/" + SceneManager.GetActiveScene().name + "-BestTime"))
+			exist = false;
+
+			foreach(string filename in _saveFileNames)
 			{
-				IFormatter formatter = new BinaryFormatter();
-				Stream stream = new FileStream(Application.persistentDataPath + "/" + SceneManager.GetActiveScene().name + "-BestTime", FileMode.Open, FileAccess.Read, FileShare.Read);
-				duration = (float)formatter.Deserialize(stream);
-				freq = (int)formatter.Deserialize(stream);
-				score = (float)formatter.Deserialize(stream);
+				if (File.Exists(Application.persistentDataPath + "/" + filename))
+				{
+					Debug.Log("Loaded ghost for " + name + " at " + Application.persistentDataPath + "/" + filename);
+					IFormatter formatter = new BinaryFormatter();
+					Stream stream = new FileStream(Application.persistentDataPath + "/" + filename, FileMode.Open, FileAccess.Read, FileShare.Read);
+					duration = (float)formatter.Deserialize(stream);
+					freq = (int)formatter.Deserialize(stream);
+					score = (float)formatter.Deserialize(stream);
 
-				_data = (List<GhostData>)formatter.Deserialize(stream);
-				stream.Close();
+					_data = (List<GhostData>)formatter.Deserialize(stream);
+					stream.Close();
 
-				exist = true;
+					exist = true;
+
+					break;
+				}
 			}
-			else
-				exist = false;
 
 			_vehicle = GetComponent<WheelVehicle>();
 			_rb = GetComponent<Rigidbody>();
@@ -73,7 +81,7 @@ namespace VehicleBehaviour
 			float time = Time.realtimeSinceStartup - _startTime;
 			int index = (int)(time * freq);
 
-			if (run && time < duration && _data != null && index < _data.Count - 1)
+			if (run && ((time < duration && index < _data.Count - 1) || _startTime == 0) && _data != null)
 			{
 				if (_startTime == 0)
 					_startTime = Time.realtimeSinceStartup;
@@ -182,17 +190,17 @@ namespace VehicleBehaviour
 			requestStop = true;
 		}
 
-		public void Save()
+		public void Save(string saveName)
 		{
 			IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(Application.persistentDataPath + "/" + SceneManager.GetActiveScene().name + "-BestTime", FileMode.Create, FileAccess.Write, FileShare.None);
+            Stream stream = new FileStream(Application.persistentDataPath + "/" + saveName, FileMode.Create, FileAccess.Write, FileShare.None);
 			formatter.Serialize(stream, duration);
 			formatter.Serialize(stream, freq);
             formatter.Serialize(stream, score);
             formatter.Serialize(stream, _data);
             stream.Close();
 
-			Debug.Log("Saved ghost for " + _vehicle.name);
+			Debug.Log("Saved ghost for " + _vehicle.name + " at " + Application.persistentDataPath + "/" + saveName);
 		}
 	}
 }

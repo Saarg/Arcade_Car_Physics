@@ -83,6 +83,7 @@ namespace VehicleBehaviour {
         [SerializeField] float boostForce = 5000;
         public float BoostForce { get { return boostForce; } }
         public bool boosting = false;
+        public bool jumping = false;
 
         [SerializeField] ParticleSystem[] boostParticles;
         [SerializeField] AudioClip boostClip;
@@ -144,6 +145,8 @@ namespace VehicleBehaviour {
                 steering = turnInputCurve.Evaluate(GetInput(turnInput)) * steerAngle;
                 // Dirft
                 drift = GetInput(driftInput) > 0 && _rb.velocity.sqrMagnitude > 100;
+                // Jump
+                jumping = GetInput(jumpInput) != 0;
             }
 
             // Direction
@@ -184,7 +187,7 @@ namespace VehicleBehaviour {
             }
 
             // Jump
-            if (GetInput(jumpInput) > 0 && isPlayer) {
+            if (jumping && isPlayer) {
                 bool isGrounded = true;
                 foreach (WheelCollider wheel in wheels)
                 {
