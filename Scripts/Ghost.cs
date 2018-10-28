@@ -36,7 +36,7 @@ namespace VehicleBehaviour
 		{ internal set; get;}
 
 		public bool exist 
-		{ internal set; get;} = false;
+		{ internal set; get;}
 
 		public float score
 		{ internal set; get;}

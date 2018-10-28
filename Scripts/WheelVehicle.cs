@@ -268,7 +268,7 @@ namespace VehicleBehaviour {
 #if MULTIOSCONTROLS
         return MultiOSControls.GetValue(input, playerId);
 #else
-        return GetInput(input);
+        return Input.GetAxis(input);
 #endif
         }
     }
