@@ -1,5 +1,7 @@
 # Arcade Car Physics (ACP)
 
+[asset store page](https://assetstore.unity.com/packages/tools/physics/arcade-car-physics-119484)
+
 This unity package provides scripts ans exemples to build arcade cars in Unity3D using the built in wheel colliders. While the wheel colliders have a reputation to be buggy and unstable I found that it is not true but they are a bit tricky to get right.
 
 In this package you'll find one demo scene with 4 exemple prefabs with low poly models made using [kenney's asset forge](https://kenney.nl/). Those prefabs are using the default unity inputs (Horizontal, Vertical, Jump, Fire1-3) but you'll need to change those to get a better driving experience and I would advice the use of a controller like most other car games.
@@ -111,3 +113,4 @@ Exemple will come but don't hesitate to ask me if you have any questions about t
 ## Exemple
 
 You can find a project I made using this asset and all the features one my [GitHub under the name Autober](https://github.com/Saarg/AutoTober).
+If you just want to test it you can find a compiled version of [autober on itch.io](https://saarg.itch.io/autober)
