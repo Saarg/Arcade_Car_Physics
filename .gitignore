@@ -36,3 +36,6 @@ sysinfo.txt
 *.unitypackage
 
 README.txt.meta
+README.md.meta
+
+LICENSE.meta
