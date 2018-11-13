@@ -35,6 +35,22 @@ namespace VehicleBehaviour {
         [SerializeField] WheelCollider[] driveWheel;
         [SerializeField] WheelCollider[] turnWheel;
 
+        bool isGrounded = false;
+        static int lastGroundCheck = 0;
+        public bool IsGrounded { get {
+            if (lastGroundCheck == Time.frameCount)
+                return isGrounded;
+
+            lastGroundCheck = Time.frameCount;
+            isGrounded = true;
+            foreach (WheelCollider wheel in wheels)
+            {
+                if (!wheel.gameObject.activeSelf || !wheel.isGrounded)
+                    isGrounded = false;
+            }
+            return isGrounded;
+        }}
+
         [Header("Behaviour")]
         // Car
         [SerializeField] AnimationCurve motorTorque;
@@ -193,14 +209,7 @@ namespace VehicleBehaviour {
 
             // Jump
             if (jumping && isPlayer) {
-                bool isGrounded = true;
-                foreach (WheelCollider wheel in wheels)
-                {
-                    if (!wheel.gameObject.activeSelf || !wheel.isGrounded)
-                        isGrounded = false;
-                }
-
-                if (!isGrounded)
+                if (!IsGrounded)
                     return;
                 
                 _rb.velocity += transform.up * jumpVel;

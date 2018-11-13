@@ -6,6 +6,8 @@ using UnityEngine;
 namespace VehicleBehaviour {
 	public class MotorBike : MonoBehaviour {
 
+		[SerializeField] float _maxAngle = 50.0f;
+
 		Rigidbody _rb;
 		Vector3 centerOfMass;
 
@@ -23,13 +25,20 @@ namespace VehicleBehaviour {
 		Quaternion targetAngle;
 		void FixedUpdate ()
 		{
-			float speedFactor = Mathf.Clamp01(_vehicle.Speed / 45.0f);
+			float speedFactor = Mathf.Clamp01(_vehicle.Speed / 70.0f);
 
 			Vector3 worldUp = transform.InverseTransformVector(Vector3.up);
 			worldUp.z = 0;
 			worldUp.Normalize();
 
-			targetAngle = Quaternion.Lerp(targetAngle, Quaternion.AngleAxis(-(_vehicle.Steering * Mathf.Clamp01(1 + _vehicle.Throttle)) * speedFactor, Vector3.forward), Time.fixedDeltaTime * 4);
+			if (_vehicle.IsGrounded) {
+				float a = (2 *_vehicle.Steering * Mathf.Clamp01(1 + _vehicle.Throttle)) * speedFactor;
+				a = Mathf.Clamp(a, -_maxAngle, _maxAngle);
+
+				targetAngle = Quaternion.Lerp(targetAngle, Quaternion.AngleAxis(-a, Vector3.forward), Time.fixedDeltaTime * 4);
+			} else
+				targetAngle = Quaternion.Lerp(targetAngle, Quaternion.identity, Time.fixedDeltaTime * 4);
+			
 			Vector3 targetUp = targetAngle * worldUp;
 
 			float angle = Vector3.SignedAngle(Vector3.up, targetUp, Vector3.forward);
