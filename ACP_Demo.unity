@@ -3242,7 +3242,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 10, y: 10}
-  m_SizeDelta: {x: 452.81, y: 62}
+  m_SizeDelta: {x: 452.81, y: 85}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &661592324
 MonoBehaviour:
@@ -3276,7 +3276,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'By Saarg
+  m_Text: 'v1.1
+
+    By Saarg
 
     twitter: @grimion_
 

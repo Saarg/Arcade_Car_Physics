@@ -2153,7 +2153,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &64206814313327348
@@ -2611,7 +2611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c241727a8fc83048b56bdd0b450f8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 1
+  isPlayer: 0
   throttleInput: Vertical
   brakeInput: Fire3
   turnInput: Horizontal
@@ -2706,7 +2706,7 @@ MonoBehaviour:
   driftIntensity: 1
   centerOfMass: {fileID: 4023411105908788}
   downforce: 2
-  handbrake: 0
+  handbrake: 1
   speed: 0
   gasParticles:
   - {fileID: 198447643681245540}
@@ -2716,6 +2716,7 @@ MonoBehaviour:
   boostRegen: 0.15
   boostForce: 2000
   boosting: 0
+  jumping: 0
   boostParticles:
   - {fileID: 198868218351894258}
   - {fileID: 198351796058775852}
