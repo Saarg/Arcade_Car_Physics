@@ -33,7 +33,10 @@ namespace VehicleBehaviour {
 
         [Header("Wheels")]
         [SerializeField] WheelCollider[] driveWheel;
+        public WheelCollider[] DriveWheel { get { return driveWheel; } }
         [SerializeField] WheelCollider[] turnWheel;
+
+        public WheelCollider[] TurnWheel { get { return turnWheel; } }
 
         bool isGrounded = false;
         static int lastGroundCheck = 0;
@@ -65,6 +68,7 @@ namespace VehicleBehaviour {
         // Drift
         [Range(0.0f, 2f)]
         [SerializeField] float driftIntensity = 1f;
+        public float DriftIntensity { get { return driftIntensity; } }
 
         //Reset
         Vector3 spawnPosition;
@@ -84,6 +88,7 @@ namespace VehicleBehaviour {
         [SerializeField] bool handbrake;
         public bool Handbrake { get{ return handbrake; } set{ handbrake = value; } } 
         
+        [HideInInspector] public bool allowDrift = true;
         bool drift;
         public bool Drift { get{ return drift; } set{ drift = value; } }         
 
@@ -94,6 +99,7 @@ namespace VehicleBehaviour {
         [SerializeField] ParticleSystem[] gasParticles;
 
         [Header("Boost")]
+        [HideInInspector] public bool allowBoost = true;
         [SerializeField] float maxBoost = 10f;
         public float MaxBoost { get { return maxBoost; } }
         [SerializeField] float boost = 10f;
@@ -145,7 +151,7 @@ namespace VehicleBehaviour {
                 em.rateOverTime = handbrake ? 0 : Mathf.Lerp(em.rateOverTime.constant, Mathf.Clamp(150.0f * throttle, 30.0f, 100.0f), 0.1f);
             }
 
-            if (isPlayer) {
+            if (isPlayer && allowBoost) {
                 boost += Time.deltaTime * boostRegen;
                 if (boost > maxBoost) { boost = maxBoost; }
             }
@@ -216,7 +222,7 @@ namespace VehicleBehaviour {
             }
 
             // Boost
-            if (boosting && boost > 0.1f) {
+            if (boosting && allowBoost && boost > 0.1f) {
                 _rb.AddForce(transform.forward * boostForce);
 
                 boost -= Time.fixedDeltaTime;
@@ -244,7 +250,7 @@ namespace VehicleBehaviour {
             }
 
             // Drift
-            if (drift) {
+            if (drift && allowDrift) {
                 Vector3 driftForce = -transform.right;
                 driftForce.y = 0.0f;
                 driftForce.Normalize();
