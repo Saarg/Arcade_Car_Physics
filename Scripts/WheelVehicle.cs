@@ -29,7 +29,7 @@ namespace VehicleBehaviour {
         [SerializeField] string driftInput = "Drift";
 	    [SerializeField] string boostInput = "Boost";
 
-        [SerializeField] AnimationCurve turnInputCurve;
+        [SerializeField] AnimationCurve turnInputCurve = AnimationCurve.Linear(-1.0f, -1.0f, 1.0f, 1.0f);
 
         [Header("Wheels")]
         [SerializeField] WheelCollider[] driveWheel;
@@ -56,7 +56,7 @@ namespace VehicleBehaviour {
 
         [Header("Behaviour")]
         // Car
-        [SerializeField] AnimationCurve motorTorque;
+        [SerializeField] AnimationCurve motorTorque = new AnimationCurve(new Keyframe(0, 200), new Keyframe(50, 300), new Keyframe(200, 0));
         [SerializeField] float brakeForce = 1500.0f;
         [Range(0f, 50.0f)]
         [SerializeField] float steerAngle = 30.0f;
