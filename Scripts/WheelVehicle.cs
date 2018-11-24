@@ -237,7 +237,7 @@ namespace VehicleBehaviour {
                 if (!boostSource.isPlaying) {
                     boostSource.Play();
                 }
-            } else {
+            } else if (boostParticles.Length > 0) {
                 if (boostParticles[0].isPlaying) {
                     foreach (ParticleSystem boostParticle in boostParticles) {
                         boostParticle.Stop();

@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: 7d7281a8c11c94c85884ade27f9e608a
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: air_ventLarge_25
+    100002: air_ventLarge_26
+    100004: block_default_3
+    100006: block_default_8
+    100008: detail_fenderSquare_11
+    100010: detail_fenderSquare_12
+    100012: detail_fenderSquare_20
+    100014: detail_fenderSquare_21
+    100016: detail_fenderSquare_22
+    100018: detail_fenderSquare_7
+    100020: engine_barrel_23
+    100022: engine_default_24
+    100024: hood_default_1
+    100026: hood_default_2
+    100028: //RootNode
+    100030: wheel_colored_14
+    100032: wheel_colored_15
+    100034: wheel_colored_16
+    100036: wheel_colored_17
+    100038: wheel_colored_18
+    100040: wheel_colored_19
+    400000: air_ventLarge_25
+    400002: air_ventLarge_26
+    400004: block_default_3
+    400006: block_default_8
+    400008: detail_fenderSquare_11
+    400010: detail_fenderSquare_12
+    400012: detail_fenderSquare_20
+    400014: detail_fenderSquare_21
+    400016: detail_fenderSquare_22
+    400018: detail_fenderSquare_7
+    400020: engine_barrel_23
+    400022: engine_default_24
+    400024: hood_default_1
+    400026: hood_default_2
+    400028: //RootNode
+    400030: wheel_colored_14
+    400032: wheel_colored_15
+    400034: wheel_colored_16
+    400036: wheel_colored_17
+    400038: wheel_colored_18
+    400040: wheel_colored_19
+    2100000: black
+    2100002: _defaultMat
+    2100004: blueSteel
+    2100006: customMaterial3
+    2100008: engine
+    2100010: tire
+    2300000: air_ventLarge_25
+    2300002: air_ventLarge_26
+    2300004: block_default_3
+    2300006: block_default_8
+    2300008: detail_fenderSquare_11
+    2300010: detail_fenderSquare_12
+    2300012: detail_fenderSquare_20
+    2300014: detail_fenderSquare_21
+    2300016: detail_fenderSquare_22
+    2300018: detail_fenderSquare_7
+    2300020: engine_barrel_23
+    2300022: engine_default_24
+    2300024: hood_default_1
+    2300026: hood_default_2
+    2300028: wheel_colored_14
+    2300030: wheel_colored_15
+    2300032: wheel_colored_16
+    2300034: wheel_colored_17
+    2300036: wheel_colored_18
+    2300038: wheel_colored_19
+    3300000: air_ventLarge_25
+    3300002: air_ventLarge_26
+    3300004: block_default_3
+    3300006: block_default_8
+    3300008: detail_fenderSquare_11
+    3300010: detail_fenderSquare_12
+    3300012: detail_fenderSquare_20
+    3300014: detail_fenderSquare_21
+    3300016: detail_fenderSquare_22
+    3300018: detail_fenderSquare_7
+    3300020: engine_barrel_23
+    3300022: engine_default_24
+    3300024: hood_default_1
+    3300026: hood_default_2
+    3300028: wheel_colored_14
+    3300030: wheel_colored_15
+    3300032: wheel_colored_16
+    3300034: wheel_colored_17
+    3300036: wheel_colored_18
+    3300038: wheel_colored_19
+    4300000: air_ventLarge_25
+    4300002: air_ventLarge_26
+    4300004: block_default_3
+    4300006: block_default_8
+    4300008: detail_fenderSquare_11
+    4300010: detail_fenderSquare_12
+    4300012: detail_fenderSquare_20
+    4300014: detail_fenderSquare_21
+    4300016: detail_fenderSquare_22
+    4300018: detail_fenderSquare_7
+    4300020: engine_barrel_23
+    4300022: engine_default_24
+    4300024: hood_default_1
+    4300026: hood_default_2
+    4300028: wheel_colored_14
+    4300030: wheel_colored_15
+    4300032: wheel_colored_16
+    4300034: wheel_colored_17
+    4300036: wheel_colored_18
+    4300038: wheel_colored_19
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 2
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
