@@ -1081,7 +1081,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05c62a4bfc8d2b4e8ac987e6d2b693b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wheelModel: {fileID: 1814389722737900}
+  cancelSteerAngle: 0
+  wheelModel: {fileID: 1814389722737900}
   localRotOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &114208943098844240
 MonoBehaviour:
@@ -1095,12 +1096,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
-  throttleInput: ThrottleLinux
-  brakeInput: BrakeLinux
+  throttleInput: Throttle
+  brakeInput: Brake
   turnInput: Horizontal
-  jumpInput: JumpLinux
-  driftInput: Fire1Linux
-  boostInput: Fire2Linux
+  jumpInput: Jump
+  driftInput: Fire1
+  boostInput: Fire2
   turnInputCurve:
     serializedVersion: 2
     m_Curve:
@@ -1179,9 +1180,11 @@ MonoBehaviour:
   centerOfMass: {fileID: 4502596125836720}
   downforce: 3
   handbrake: 0
+  allowDrift: 1
   speed: 0
   gasParticles:
   - {fileID: 198060308615543138}
+  allowBoost: 1
   maxBoost: 12
   boost: 12
   boostRegen: 0.2
@@ -1234,7 +1237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05c62a4bfc8d2b4e8ac987e6d2b693b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wheelModel: {fileID: 1703921371564138}
+  cancelSteerAngle: 0
+  wheelModel: {fileID: 1703921371564138}
   localRotOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &114502013425052198
 MonoBehaviour:

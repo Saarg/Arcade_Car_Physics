@@ -6,16 +6,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace VehicleBehaviour {
     [RequireComponent(typeof(WheelCollider))]
 
     public class Suspension : MonoBehaviour {
 
-        public GameObject _wheelModel;
+        public bool cancelSteerAngle = false;
+        [FormerlySerializedAs("_wheelModel")]
+        public GameObject wheelModel;
         private WheelCollider _wheelCollider;
 
-        [SerializeField] Vector3 localRotOffset;
+        public Vector3 localRotOffset;
 
         private float lastUpdate;
 
@@ -34,15 +37,18 @@ namespace VehicleBehaviour {
             }
             lastUpdate = Time.realtimeSinceStartup;
 
-            if (_wheelModel && _wheelCollider)
+            if (wheelModel && _wheelCollider)
             {
                 Vector3 pos = new Vector3(0, 0, 0);
                 Quaternion quat = new Quaternion();
                 _wheelCollider.GetWorldPose(out pos, out quat);
 
-                _wheelModel.transform.rotation = quat;
-                _wheelModel.transform.localRotation *= Quaternion.Euler(localRotOffset);
-                _wheelModel.transform.position = pos;
+                wheelModel.transform.rotation = quat;
+                if (cancelSteerAngle)
+                    wheelModel.transform.rotation = transform.parent.rotation;
+
+                wheelModel.transform.localRotation *= Quaternion.Euler(localRotOffset);
+                wheelModel.transform.position = pos;
 
                 WheelHit wheelHit;
                 _wheelCollider.GetGroundHit(out wheelHit);

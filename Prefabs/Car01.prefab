@@ -1844,7 +1844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05c62a4bfc8d2b4e8ac987e6d2b693b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wheelModel: {fileID: 1501130010532396}
+  wheelModel: {fileID: 1501130010532396}
   localRotOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &114297602234609956
 MonoBehaviour:
@@ -1857,7 +1857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05c62a4bfc8d2b4e8ac987e6d2b693b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wheelModel: {fileID: 1511807629565592}
+  wheelModel: {fileID: 1511807629565592}
   localRotOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &114307508559191334
 MonoBehaviour:
@@ -2042,7 +2042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05c62a4bfc8d2b4e8ac987e6d2b693b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wheelModel: {fileID: 1043648440425546}
+  wheelModel: {fileID: 1043648440425546}
   localRotOffset: {x: 0, y: 180, z: 0}
 --- !u!114 &114607586817085386
 MonoBehaviour:
@@ -2091,7 +2091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05c62a4bfc8d2b4e8ac987e6d2b693b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wheelModel: {fileID: 1410757956788902}
+  wheelModel: {fileID: 1410757956788902}
   localRotOffset: {x: 0, y: 180, z: 0}
 --- !u!146 &146389363331650624
 WheelCollider:
