@@ -12,7 +12,7 @@ The typical vehicle's composition is as follow:
 ```
 ├── CarPrefab
 │   ├── Body
-│   |   ├── Rigidbody
+│   |   ├── 3D mesh
 │   ├── Front Left Wheel
 │   |   ├── Wheelcollider
 │   |   ├── Suspension (Script)
