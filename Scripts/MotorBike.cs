@@ -7,7 +7,18 @@ namespace VehicleBehaviour {
 
 	public class MotorBike : MonoBehaviour {
 
-		[SerializeField] float _maxAngle = 50.0f;
+		[SerializeField][Range(0.0f, 200.0f)] float _maxAngleSpeed = 70.0f;
+		[SerializeField][Range(0.0f, 90.0f)] float _maxAngle = 50.0f;
+
+		[SerializeField] string _wheelieInput = "Boost";
+		[SerializeField][Range(0.0f, 20.0f)] float _wheelieForce = 10.0f;
+		[SerializeField][Range(0.0f, 90.0f)] float _maxWheelieAngle = 50.0f;
+		[SerializeField][Range(0.0f, 200.0f)] float _maxWheelieSpeed = 70.0f;
+		[SerializeField] string _stopieInput = "Brake";
+		[SerializeField][Range(0.0f, 20.0f)] float _stopieForce = 10.0f;
+		[SerializeField][Range(0.0f, 90.0f)] float _maxStopieAngle = 30.0f;
+		
+		[SerializeField][Range(0.0f, 200.0f)] float _maxStopieSpeed = 70.0f;
 
 		Rigidbody _rb;
 
@@ -32,7 +43,7 @@ namespace VehicleBehaviour {
 		void FixedUpdate ()
 		{
 			{	// Upright code
-				float speedFactor = Mathf.Clamp01(_vehicle.Speed / 70.0f);
+				float speedFactor = Mathf.Clamp01(_vehicle.Speed / _maxAngleSpeed);
 
 				Vector3 worldUp = transform.InverseTransformVector(Vector3.up);
 				worldUp.z = 0;
@@ -42,9 +53,9 @@ namespace VehicleBehaviour {
 					float a = (2 *_vehicle.Steering * Mathf.Clamp01(1 + _vehicle.Throttle)) * speedFactor;
 					a = Mathf.Clamp(a, -_maxAngle, _maxAngle);
 
-					targetAngle = Quaternion.Lerp(targetAngle, Quaternion.AngleAxis(-a, Vector3.forward), Time.fixedDeltaTime * 4);
+					targetAngle = Quaternion.Lerp(targetAngle, Quaternion.AngleAxis(-a, Vector3.forward), Time.fixedDeltaTime * 2);
 				} else
-					targetAngle = Quaternion.Lerp(targetAngle, Quaternion.identity, Time.fixedDeltaTime * 4);
+					targetAngle = Quaternion.Lerp(targetAngle, Quaternion.identity, Time.fixedDeltaTime * 2);
 				
 				Vector3 targetUp = targetAngle * worldUp;
 
@@ -55,6 +66,37 @@ namespace VehicleBehaviour {
 
 				Debug.DrawLine(transform.position, transform.position + transform.TransformVector(worldUp), Color.red);
 				Debug.DrawLine(transform.position, transform.position + transform.TransformVector(targetUp), Color.green);
+			}
+
+			{	// Wheelie
+				Vector3 forward = transform.forward;
+				forward.y = 0;
+				forward.Normalize();
+
+				float angle = Vector3.SignedAngle(forward, transform.forward, -transform.right);
+				
+				if (Input.GetAxis(_wheelieInput) != 0)
+				{
+					float wheeliefactor = Input.GetAxis(_wheelieInput) * (_wheelieForce - _wheelieForce * Mathf.Clamp01(_vehicle.Speed / _maxWheelieSpeed));
+					_rb.AddRelativeTorque(new Vector3(-_vehicle.Throttle * wheeliefactor * _rb.mass, 0, 0));
+				}
+
+				if (Input.GetAxis(_stopieInput) != 0)
+				{
+					float wheeliefactor = Input.GetAxis(_stopieInput) * (_stopieForce * Mathf.Clamp01(_vehicle.Speed / _maxStopieSpeed));
+					_rb.AddRelativeTorque(new Vector3(-_vehicle.Throttle * wheeliefactor * _rb.mass, 0, 0));
+				}
+
+				if ((angle > _maxWheelieAngle || angle < -_maxStopieAngle) && !_vehicle.IsGrounded)
+				{
+					Debug.DrawLine(transform.position, transform.position + forward, Color.green);
+					Debug.DrawLine(transform.position, transform.position + forward, Color.red);
+					_rb.AddRelativeTorque(new Vector3(angle * _rb.mass, 0, 0));
+				}
+				else if (Input.GetAxis(_wheelieInput) == 0 && Input.GetAxis(_stopieInput) == 0)
+				{
+					_rb.AddRelativeTorque(new Vector3(Mathf.Clamp(angle, -1, 1) * _vehicle.Downforce * _rb.mass, 0, 0));
+				}
 			}
 
 			if (_vehicle.Drift)

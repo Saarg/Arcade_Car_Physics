@@ -76,7 +76,9 @@ namespace VehicleBehaviour {
 
         [SerializeField] Transform centerOfMass;
         [Range(0.5f, 3f)]
-        [SerializeField] float downforce = 1.0f;        
+        [SerializeField] float downforce = 1.0f;
+        
+        public float Downforce { get{ return downforce; } set{ downforce = Mathf.Clamp(value, 0, float.PositiveInfinity); } }     
 
         // External inputs
         float steering;
