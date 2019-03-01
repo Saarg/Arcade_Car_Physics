@@ -30,7 +30,7 @@ namespace VehicleBehaviour.Utils {
 		}
 
 		void FixedUpdate() {
-			if (!follow) return;
+			if (!follow || target == null) return;
 
 			this.rb.velocity.Normalize();
 

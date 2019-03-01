@@ -1095,9 +1095,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c241727a8fc83048b56bdd0b450f8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 1
-  throttleInput: Throttle
-  brakeInput: Brake
+  isPlayer: 0
+  throttleInput: Vertical
+  brakeInput: Fire3
   turnInput: Horizontal
   jumpInput: Jump
   driftInput: Fire1
@@ -1176,7 +1176,7 @@ MonoBehaviour:
   steerAngle: 30
   steerSpeed: 10
   jumpVel: 1.1
-  driftIntensity: 0
+  driftIntensity: 2
   centerOfMass: {fileID: 4502596125836720}
   downforce: 3
   handbrake: 0
@@ -1225,7 +1225,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7adf626033efa433284bf0c49bb3160e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxAngleSpeed: 70
   _maxAngle: 50
+  _wheelieInput: Fire2
+  _wheelieForce: 10
+  _maxWheelieAngle: 50
+  _maxWheelieSpeed: 70
+  _stopieInput: Fire3
+  _stopieForce: 10
+  _maxStopieAngle: 30
+  _maxStopieSpeed: 70
 --- !u!114 &114455078468934254
 MonoBehaviour:
   m_ObjectHideFlags: 1
