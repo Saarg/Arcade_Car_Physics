@@ -274,23 +274,23 @@ namespace VehicleBehaviour {
                 boost -= Time.fixedDeltaTime;
                 if (boost < 0f) { boost = 0f; }
 
-                if (boostParticles[0] != null && !boostParticles[0].isPlaying) {
+                if (boostParticles.Length > 0 && !boostParticles[0].isPlaying) {
                     foreach (ParticleSystem boostParticle in boostParticles) {
                         boostParticle.Play();
                     }
                 }
 
-                if (!boostSource.isPlaying) {
+                if (boostSource != null && !boostSource.isPlaying) {
                     boostSource.Play();
                 }
-            } else if (boostParticles.Length > 0) {
-                if (boostParticles[0] != null && boostParticles[0].isPlaying) {
+            } else {
+                if (boostParticles.Length > 0 && boostParticles[0].isPlaying) {
                     foreach (ParticleSystem boostParticle in boostParticles) {
                         boostParticle.Stop();
                     }
                 }
 
-                if (boostSource.isPlaying) {
+                if (boostSource != null && boostSource.isPlaying) {
                     boostSource.Stop();
                 }
             }
