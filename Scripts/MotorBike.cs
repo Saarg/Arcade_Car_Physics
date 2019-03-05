@@ -75,13 +75,13 @@ namespace VehicleBehaviour {
 
 				float angle = Vector3.SignedAngle(forward, transform.forward, -transform.right);
 				
-				if (Input.GetAxis(_wheelieInput) != 0)
+				if (Input.GetAxis(_wheelieInput) != 0 && _vehicle.Throttle > 0)
 				{
 					float wheeliefactor = Input.GetAxis(_wheelieInput) * (_wheelieForce - _wheelieForce * Mathf.Clamp01(_vehicle.Speed / _maxWheelieSpeed));
 					_rb.AddRelativeTorque(new Vector3(-_vehicle.Throttle * wheeliefactor * _rb.mass, 0, 0));
 				}
 
-				if (Input.GetAxis(_stopieInput) != 0)
+				if (Input.GetAxis(_stopieInput) != 0 && _vehicle.Throttle < 0)
 				{
 					float wheeliefactor = Input.GetAxis(_stopieInput) * (_stopieForce * Mathf.Clamp01(_vehicle.Speed / _maxStopieSpeed));
 					_rb.AddRelativeTorque(new Vector3(-_vehicle.Throttle * wheeliefactor * _rb.mass, 0, 0));

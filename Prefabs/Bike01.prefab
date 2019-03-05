@@ -1176,7 +1176,7 @@ MonoBehaviour:
   steerAngle: 30
   steerSpeed: 10
   jumpVel: 1.1
-  driftIntensity: 2
+  driftIntensity: 0.85
   centerOfMass: {fileID: 4502596125836720}
   downforce: 3
   handbrake: 0
