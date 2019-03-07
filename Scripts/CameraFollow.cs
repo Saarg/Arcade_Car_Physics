@@ -9,48 +9,62 @@ using UnityEngine;
 
 namespace VehicleBehaviour.Utils {
 	public class CameraFollow : MonoBehaviour {
+		// Should the camera follow the target
 		[SerializeField] bool follow = false;
 		public bool Follow { get { return follow; } set { follow = value; } }
+
+		// Current target
 		[SerializeField] Transform target;
+
+		// ALl possible targets
 		[SerializeField] Transform[] targets;
+
+		// Offset from the target position
 		[SerializeField] Vector3 offset;
+
+		// Camera speeds
 		[Range(0, 10)]
 		[SerializeField] float lerpPositionMultiplier = 1f;
 		[Range(0, 10)]		
 		[SerializeField] float lerpRotationMultiplier = 1f;
 
+		// We use a rigidbody to prevent the camera from going in walls but it means sometime it can get stuck
 		Rigidbody rb;
+		Rigidbody target_rb;
 
 		void Start () {
 			rb = GetComponent<Rigidbody>();
 		}
 
+		// Select target from targets list using it's index
 		public void SetTargetIndex(int i) {
 			target = targets[i % targets.Length];
 		}
 
 		void FixedUpdate() {
+			// If we don't follow or target is null return
 			if (!follow || target == null) return;
 
+			// normalise velocity so it doesn't jump too far
 			this.rb.velocity.Normalize();
 
+			// Save transform localy
 			Quaternion curRot = transform.rotation;
-
-			Rigidbody rb = target.GetComponent<Rigidbody>();
-			if (rb == null)
-				transform.LookAt(target);
-			else {
-				transform.LookAt(target.position/* + target.forward * rb.velocity.sqrMagnitude*/);				
-			}
-			
 			Vector3 tPos = target.position + target.TransformDirection(offset);
+
+			// Look at the target
+			transform.LookAt(target);
+
+			// Keep the camera above the target y position
 			if (tPos.y < target.position.y) {
 				tPos.y = target.position.y;
 			}
 
+			// Set transform with lerp
 			transform.position = Vector3.Lerp(transform.position, tPos, Time.fixedDeltaTime * lerpPositionMultiplier);
 			transform.rotation = Quaternion.Lerp(curRot, transform.rotation, Time.fixedDeltaTime * lerpRotationMultiplier);
 
+			// Keep camera above the y:0.5f to prevent camera going underground
 			if (transform.position.y < 0.5f) {
 				transform.position = new Vector3(transform.position.x , 0.5f, transform.position.z);
 			}
