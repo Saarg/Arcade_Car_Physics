@@ -97,7 +97,7 @@ namespace VehicleBehaviour {
          */
         [SerializeField] Transform centerOfMass;
         // Force aplied downwards on the car, proportional to the car speed
-        [Range(0.5f, 3f)]
+        [Range(0.5f, 5f)]
         [SerializeField] float downforce = 1.0f;
         
         public float Downforce { get{ return downforce; } set{ downforce = Mathf.Clamp(value, 0, float.PositiveInfinity); } }     
@@ -311,7 +311,7 @@ namespace VehicleBehaviour {
             }
 
             // Downforce
-            _rb.AddForce(transform.up * speed * downforce);
+            _rb.AddForce(-transform.up * speed * downforce);
         }
 
         // Reposition the car to the start position
