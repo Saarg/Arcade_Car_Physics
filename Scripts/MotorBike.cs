@@ -7,18 +7,29 @@ namespace VehicleBehaviour {
 
 	public class MotorBike : MonoBehaviour {
 
+		[Header("Steering")]
 		[SerializeField][Range(0.0f, 200.0f)] float _maxAngleSpeed = 70.0f;
+		public float MaxAngleSpeed { get { return _maxAngleSpeed; } set { _maxAngleSpeed = Mathf.Clamp(value, 0.0f, 200.0f); }}
 		[SerializeField][Range(0.0f, 90.0f)] float _maxAngle = 50.0f;
+		public float MaxAngle { get { return _maxAngle; } set { _maxAngle = Mathf.Clamp(value, 0.0f, 90.0f); }}
 
+		[Header("Wheeling")]
 		[SerializeField] string _wheelieInput = "Boost";
 		[SerializeField][Range(0.0f, 20.0f)] float _wheelieForce = 10.0f;
+		public float WheelieForce { get { return _wheelieForce; } set { _wheelieForce = Mathf.Clamp(value, 0.0f, 20.0f); }}
 		[SerializeField][Range(0.0f, 90.0f)] float _maxWheelieAngle = 50.0f;
+		public float MaxWheelieAngle { get { return _maxWheelieAngle; } set { _maxWheelieAngle = Mathf.Clamp(value, 0.0f, 50.0f); }}
 		[SerializeField][Range(0.0f, 200.0f)] float _maxWheelieSpeed = 70.0f;
+		public float MaxWheelieSpeed { get { return _maxWheelieSpeed; } set { _maxWheelieSpeed = Mathf.Clamp(value, 0.0f, 20.0f); }}
+
+		[Header("Stopie")]
 		[SerializeField] string _stopieInput = "Brake";
 		[SerializeField][Range(0.0f, 20.0f)] float _stopieForce = 10.0f;
+		public float StopieForce { get { return _stopieForce; } set { _stopieForce = Mathf.Clamp(value, 0.0f, 20.0f); }}
 		[SerializeField][Range(0.0f, 90.0f)] float _maxStopieAngle = 30.0f;
-		
+		public float MaxStopieAngle { get { return _maxStopieAngle; } set { _maxStopieAngle = Mathf.Clamp(value, 0.0f, 20.0f); }}
 		[SerializeField][Range(0.0f, 200.0f)] float _maxStopieSpeed = 70.0f;
+		public float MaxStopieSpeed { get { return _maxStopieSpeed; } set { _maxStopieSpeed = Mathf.Clamp(value, 0.0f, 20.0f); }}
 
 		Rigidbody _rb;
 

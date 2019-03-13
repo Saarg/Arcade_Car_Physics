@@ -72,19 +72,27 @@ namespace VehicleBehaviour {
         [SerializeField] AnimationCurve motorTorque = new AnimationCurve(new Keyframe(0, 200), new Keyframe(50, 300), new Keyframe(200, 0));
         // Basicaly how hard it brakes
         [SerializeField] float brakeForce = 1500.0f;
+        public float BrakeForce { get { return brakeForce; } set { brakeForce = value; } }
+
         // Max steering hangle, usualy higher for drift car
         [Range(0f, 50.0f)]
         [SerializeField] float steerAngle = 30.0f;
+        public float SteerAngle { get { return steerAngle; } set { steerAngle = Mathf.Clamp(value, 0.0f, 50.0f); } }
+
         // The value used in the steering Lerp, 1 is instant (Strong power steering), and 0 is not turning at all
         [Range(0.001f, 1.0f)]
         [SerializeField] float steerSpeed = 0.2f;
+        public float SteerSpeed { get { return steerSpeed; } set { steerSpeed = Mathf.Clamp(value, 0.001f, 1.0f); } }
+
         // How hight do you want to jump?
         [Range(1f, 1.5f)]
         [SerializeField] float jumpVel = 1.3f;
+        public float JumpVel { get { return jumpVel; } set { jumpVel = Mathf.Clamp(value, 1.0f, 1.5f); } }
+
         // How hard do you want to drift?
         [Range(0.0f, 2f)]
         [SerializeField] float driftIntensity = 1f;
-        public float DriftIntensity { get { return driftIntensity; } }
+        public float DriftIntensity { get { return driftIntensity; } set { driftIntensity = Mathf.Clamp(value, 0.0f, 2.0f); }}
 
         // Reset Values
         Vector3 spawnPosition;
@@ -96,19 +104,19 @@ namespace VehicleBehaviour {
          *  Move it a bit to the from or bottom according to where the engine is
          */
         [SerializeField] Transform centerOfMass;
+
         // Force aplied downwards on the car, proportional to the car speed
         [Range(0.5f, 5f)]
         [SerializeField] float downforce = 1.0f;
-        
-        public float Downforce { get{ return downforce; } set{ downforce = Mathf.Clamp(value, 0, float.PositiveInfinity); } }     
+        public float Downforce { get{ return downforce; } set{ downforce = Mathf.Clamp(value, 0, 5); } }     
 
         // When IsPlayer is false you can use this to control the steering
         float steering;
-        public float Steering { get{ return steering; } set{ steering = value; } } 
+        public float Steering { get{ return steering; } set{ steering = Mathf.Clamp(value, -1f, 1f); } } 
 
         // When IsPlayer is false you can use this to control the throttle
         float throttle;
-        public float Throttle { get{ return throttle; } set{ throttle = value; } } 
+        public float Throttle { get{ return throttle; } set{ throttle = Mathf.Clamp(value, -1f, 1f); } } 
 
         // Like your own car handbrake, if it's true the car will not move
         [SerializeField] bool handbrake;
@@ -130,22 +138,26 @@ namespace VehicleBehaviour {
         [Header("Boost")]
         // Disable boost
         [HideInInspector] public bool allowBoost = true;
+
+        // Maximum boost available
         [SerializeField] float maxBoost = 10f;
-        public float MaxBoost { get { return maxBoost; } }
+        public float MaxBoost { get { return maxBoost; } set {maxBoost = value;} }
+
+        // Current boost available
         [SerializeField] float boost = 10f;
-        public float Boost { get { return boost; } }
+        public float Boost { get { return boost; } set { boost = Mathf.Clamp(value, 0f, maxBoost); } }
 
         // Regen boostRegen per second until it's back to maxBoost
         [Range(0f, 1f)]
         [SerializeField] float boostRegen = 0.2f;
-        public float BoostRegen { get { return boostRegen; } }
+        public float BoostRegen { get { return boostRegen; } set { boostRegen = Mathf.Clamp01(value); } }
 
         /*
          *  The force applied to the car when boosting
          *  NOTE: the boost does not care if the car is grounded or not
          */
         [SerializeField] float boostForce = 5000;
-        public float BoostForce { get { return boostForce; } }
+        public float BoostForce { get { return boostForce; } set { boostForce = value; } }
 
         // Use this to boost when IsPlayer is set to false
         public bool boosting = false;
@@ -332,6 +344,8 @@ namespace VehicleBehaviour {
 #if MULTIOSCONTROLS
         private static MultiOSControls _controls;
 #endif
+
+        // Use this method if you want to use your own input manager
         private float GetInput(string input) {
 #if MULTIOSCONTROLS
         return MultiOSControls.GetValue(input, playerId);
