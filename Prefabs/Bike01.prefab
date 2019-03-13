@@ -1096,12 +1096,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  throttleInput: Throttle
-  brakeInput: Brake
+  throttleInput: ThrottleLinux
+  brakeInput: BrakeLinux
   turnInput: Horizontal
-  jumpInput: Jump
-  driftInput: Fire1
-  boostInput: Fire2
+  jumpInput: JumpLinux
+  driftInput: Fire1Linux
+  boostInput: Fire2Linux
   turnInputCurve:
     serializedVersion: 2
     m_Curve:

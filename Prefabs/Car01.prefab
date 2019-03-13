@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4562475283101170}
   - component: {fileID: 33870215680507902}
   - component: {fileID: 23285391330196262}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: wheel_dirt_42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 146796372485663100}
   - component: {fileID: 114293484777299700}
   - component: {fileID: 114607586817085386}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: FRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 33560979758534608}
   - component: {fileID: 23693862682799728}
   - component: {fileID: 64536320895021568}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_fenderSquare_31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 33410334641043872}
   - component: {fileID: 23879399368224006}
   - component: {fileID: 64684732384623694}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: trunk_bed_30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 33695385662582310}
   - component: {fileID: 23508185779313554}
   - component: {fileID: 64926030064857426}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_fenderSquare_34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 4727808941751372}
   - component: {fileID: 33137100533217056}
   - component: {fileID: 23970195252315496}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: wheel_dirt_42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 146612621070234940}
   - component: {fileID: 114918040405233874}
   - component: {fileID: 114307508559191334}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: FLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 4027388118229754}
   - component: {fileID: 33709484927871908}
   - component: {fileID: 23060347521304614}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: wheel_dirt_42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 4129474284388348}
   - component: {fileID: 33851916229655650}
   - component: {fileID: 23675909008310626}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: wheel_dirt_42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 33772974080194338}
   - component: {fileID: 23122325762224024}
   - component: {fileID: 64699706984835500}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_rollbar_35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 33854013647263536}
   - component: {fileID: 23343754107818360}
   - component: {fileID: 64912928754229284}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_exhaustVertical_39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 33846022201590466}
   - component: {fileID: 23449974548984156}
   - component: {fileID: 64655969920003274}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_exhaustVertical_38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 33367814759509722}
   - component: {fileID: 23641614458651042}
   - component: {fileID: 64042099772104574}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_engine_36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 146650334646592910}
   - component: {fileID: 114528242420733214}
   - component: {fileID: 114462501032976996}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: BLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 33172442789316128}
   - component: {fileID: 23789151779545726}
   - component: {fileID: 64603140975460740}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_fenderSquare_32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 146389363331650624}
   - component: {fileID: 114297602234609956}
   - component: {fileID: 114514089237265360}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: BRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 33005596391757476}
   - component: {fileID: 23563683302202564}
   - component: {fileID: 64372961233904850}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: windshield_truck_28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4960957718180336}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 33664530531618164}
   - component: {fileID: 23891969605707864}
   - component: {fileID: 64283117196328558}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_fenderSquare_33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 33227415905653546}
   - component: {fileID: 23776857308020136}
   - component: {fileID: 64078557508711838}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: hood_default_29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1911,12 +1911,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  throttleInput: Vertical
-  brakeInput: Fire3
+  throttleInput: ThrottleLinux
+  brakeInput: BrakeLinux
   turnInput: Horizontal
-  jumpInput: Jump
-  driftInput: Fire1
-  boostInput: Fire2
+  jumpInput: JumpLinux
+  driftInput: Fire1Linux
+  boostInput: Fire2Linux
   turnInputCurve:
     serializedVersion: 2
     m_Curve:

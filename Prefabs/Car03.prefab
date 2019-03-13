@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4602912051580278}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Wheel03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4619060603574490}
   - component: {fileID: 33114013618072132}
   - component: {fileID: 23759807688784690}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: wheel_future_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 33149281260499358}
   - component: {fileID: 23275345142124518}
   - component: {fileID: 64186939491575238}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_exhaustVertical_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 33070198182859938}
   - component: {fileID: 23593106688211372}
   - component: {fileID: 64914131079693062}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_antenna_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4328273277595512}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Wheel03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 146286184125572444}
   - component: {fileID: 114656363667763924}
   - component: {fileID: 114514623735301302}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: FLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4076727262605222}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Wheel03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 33235678954612916}
   - component: {fileID: 23163233684588482}
   - component: {fileID: 64671364729094310}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_fender_24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4662984996916760}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Wheel03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 146503941125093616}
   - component: {fileID: 114643027977835332}
   - component: {fileID: 114004487825874770}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: MRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4347650664449056}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 146330769488331512}
   - component: {fileID: 114549205957963944}
   - component: {fileID: 114268794165157874}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: BRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 33526277109378560}
   - component: {fileID: 23079268881233098}
   - component: {fileID: 64850589043475088}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_bullbar_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 33780277785872002}
   - component: {fileID: 23844060104671542}
   - component: {fileID: 64510640490425430}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: trunk_truck_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 4795249975155088}
   - component: {fileID: 33090014391339522}
   - component: {fileID: 23780941882647136}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: wheel_future_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 146223463955533182}
   - component: {fileID: 114708725908442460}
   - component: {fileID: 114582472379653674}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: FRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 33619331968380334}
   - component: {fileID: 23023048575618042}
   - component: {fileID: 64854749024022004}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: block_default_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 33845685020379000}
   - component: {fileID: 23142455953900642}
   - component: {fileID: 64896853159305956}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_exhaustVertical_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 4854476188241820}
   - component: {fileID: 33332383555286936}
   - component: {fileID: 23682005234221038}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: wheel_future_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4621026747628762}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Wheel03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 33870190657618158}
   - component: {fileID: 23004231908355230}
   - component: {fileID: 64794387597939276}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: trunk_station_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 4237746823352640}
   - component: {fileID: 33175158608255134}
   - component: {fileID: 23697721416314862}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: wheel_future_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4199945678807500}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Wheel03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 146632781246139884}
   - component: {fileID: 114830441019070074}
   - component: {fileID: 114238707353588394}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: MLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 146649588155012732}
   - component: {fileID: 114336321810420182}
   - component: {fileID: 114793473492780294}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: BLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 4761000127565792}
   - component: {fileID: 33326222437360312}
   - component: {fileID: 23734039666242414}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: wheel_future_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ GameObject:
   - component: {fileID: 33420672935094268}
   - component: {fileID: 23137870336661346}
   - component: {fileID: 64895515919316194}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: hood_sport_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ GameObject:
   - component: {fileID: 4580456124273612}
   - component: {fileID: 33968909949727374}
   - component: {fileID: 23144628431394938}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: wheel_future_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 33890979861315488}
   - component: {fileID: 23113972022925258}
   - component: {fileID: 64018307578444160}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: trunk_truck_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 33903751456791800}
   - component: {fileID: 23543164966108790}
   - component: {fileID: 64220054022863410}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_fender_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2447,12 +2447,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  throttleInput: Vertical
-  brakeInput: Fire3
+  throttleInput: ThrottleLinux
+  brakeInput: BrakeLinux
   turnInput: Horizontal
-  jumpInput: Jump
-  driftInput: Fire1
-  boostInput: Fire2
+  jumpInput: JumpLinux
+  driftInput: Fire1Linux
+  boostInput: Fire2Linux
   turnInputCurve:
     serializedVersion: 2
     m_Curve:

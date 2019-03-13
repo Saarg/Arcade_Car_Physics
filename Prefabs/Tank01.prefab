@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4411942771071080}
   - component: {fileID: 33440966293104248}
   - component: {fileID: 23705987434160812}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wheel_colored_44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4561299244809626}
   - component: {fileID: 33012724125229454}
   - component: {fileID: 23766266669633566}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wheel_colored_44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,9 +72,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4087299518207908}
   - component: {fileID: 146578055254129886}
-  - component: {fileID: 114287957489546958}
   - component: {fileID: 114729035430018026}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +88,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4495511258498654}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wheel04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4496985261834708}
   - component: {fileID: 146908158155651408}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +191,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4415514431142602}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftChain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +206,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4463303220641252}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wheel04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4959479295701674}
   - component: {fileID: 146984636146741330}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +272,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4219451599353804}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightChain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,9 +303,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4828924175734050}
   - component: {fileID: 146460121598761772}
-  - component: {fileID: 114578056831423140}
   - component: {fileID: 114679403367992156}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MFRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +321,7 @@ GameObject:
   - component: {fileID: 4868575845027892}
   - component: {fileID: 33744127224489026}
   - component: {fileID: 23972995534001558}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wheel_colored_44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +372,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4609632221692474}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wheel04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +389,7 @@ GameObject:
   - component: {fileID: 4255273008135484}
   - component: {fileID: 33704525190538062}
   - component: {fileID: 23780479632612006}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wheel_colored_44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4618915810112552}
   - component: {fileID: 146650152620103312}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +454,7 @@ GameObject:
   - component: {fileID: 4835236795369876}
   - component: {fileID: 33020706529325056}
   - component: {fileID: 23411317426899156}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wheel_colored_44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +469,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4699307959832584}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wheel04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,9 +485,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4087470799639308}
   - component: {fileID: 146706254791035014}
-  - component: {fileID: 114678574585353280}
   - component: {fileID: 114576976112395978}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MBRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,9 +502,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4044879889441254}
   - component: {fileID: 146721398983842550}
-  - component: {fileID: 114929094327973408}
   - component: {fileID: 114074049052342634}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MBLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,7 +536,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4408000840682608}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wheel04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +553,7 @@ GameObject:
   - component: {fileID: 4193353492496902}
   - component: {fileID: 33024816260751164}
   - component: {fileID: 23103755928749638}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wheel_colored_44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -591,9 +587,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4515532535770266}
   - component: {fileID: 146136907833880356}
-  - component: {fileID: 114962756748082534}
   - component: {fileID: 114437217772613288}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MFLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +603,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4418149579317568}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wheel04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,7 +619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4179506830593468}
   - component: {fileID: 146151947179177834}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,9 +688,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4455110265979090}
   - component: {fileID: 146466489475894734}
-  - component: {fileID: 114441622759477632}
   - component: {fileID: 114368929039508860}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2333,25 +2327,6 @@ MonoBehaviour:
   cancelSteerAngle: 1
   wheelModel: {fileID: 1143965334404394}
   localRotOffset: {x: 0, y: 180, z: 0}
---- !u!114 &114287957489546958
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1074244705817480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae437f48cab54a31b2c01d2e4d2ced7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  width: 0.3
-  decayTime: 10
-  material: {fileID: 2100000, guid: 7d7281a8c11c94c85884ade27f9e608a, type: 3}
-  roughness: 0
-  softSourceEnd: 1
-  trailing: 0
-  parent: {fileID: 4418149579317568}
-  offset: {x: 0, y: -0.599, z: 0}
 --- !u!114 &114368929039508860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2380,25 +2355,6 @@ MonoBehaviour:
   cancelSteerAngle: 1
   wheelModel: {fileID: 1589292467235674}
   localRotOffset: {x: 0, y: 180, z: 0}
---- !u!114 &114441622759477632
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1972302893718050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae437f48cab54a31b2c01d2e4d2ced7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  width: 0.3
-  decayTime: 10
-  material: {fileID: 2100000, guid: 7d7281a8c11c94c85884ade27f9e608a, type: 3}
-  roughness: 0
-  softSourceEnd: 1
-  trailing: 0
-  parent: {fileID: 4408000840682608}
-  offset: {x: 0, y: -0.599, z: 0}
 --- !u!114 &114576976112395978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2413,44 +2369,6 @@ MonoBehaviour:
   cancelSteerAngle: 1
   wheelModel: {fileID: 1787073534119090}
   localRotOffset: {x: 0, y: 0, z: 0}
---- !u!114 &114578056831423140
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1365520005431162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae437f48cab54a31b2c01d2e4d2ced7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  width: 0.3
-  decayTime: 10
-  material: {fileID: 2100000, guid: 7d7281a8c11c94c85884ade27f9e608a, type: 3}
-  roughness: 0
-  softSourceEnd: 1
-  trailing: 0
-  parent: {fileID: 4463303220641252}
-  offset: {x: 0, y: -0.599, z: 0}
---- !u!114 &114678574585353280
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1791377182231902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae437f48cab54a31b2c01d2e4d2ced7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  width: 0.3
-  decayTime: 10
-  material: {fileID: 2100000, guid: 7d7281a8c11c94c85884ade27f9e608a, type: 3}
-  roughness: 0
-  softSourceEnd: 1
-  trailing: 0
-  parent: {fileID: 4699307959832584}
-  offset: {x: 0, y: -0.599, z: 0}
 --- !u!114 &114679403367992156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2491,12 +2409,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  throttleInput: Vertical
-  brakeInput: Fire3
+  throttleInput: ThrottleLinux
+  brakeInput: BrakeLinux
   turnInput: Horizontal
-  jumpInput: Jump
-  driftInput: Fire1
-  boostInput: Fire2
+  jumpInput: JumpLinux
+  driftInput: Fire1Linux
+  boostInput: Fire2Linux
   turnInputCurve:
     serializedVersion: 2
     m_Curve:
@@ -2584,44 +2502,6 @@ MonoBehaviour:
   boostParticles: []
   boostClip: {fileID: 0}
   boostSource: {fileID: 0}
---- !u!114 &114929094327973408
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1823220158036530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae437f48cab54a31b2c01d2e4d2ced7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  width: 0.3
-  decayTime: 10
-  material: {fileID: 2100000, guid: 7d7281a8c11c94c85884ade27f9e608a, type: 3}
-  roughness: 0
-  softSourceEnd: 1
-  trailing: 0
-  parent: {fileID: 4495511258498654}
-  offset: {x: 0, y: -0.599, z: 0}
---- !u!114 &114962756748082534
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1872595220039096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae437f48cab54a31b2c01d2e4d2ced7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  width: 0.3
-  decayTime: 10
-  material: {fileID: 2100000, guid: 7d7281a8c11c94c85884ade27f9e608a, type: 3}
-  roughness: 0
-  softSourceEnd: 1
-  trailing: 0
-  parent: {fileID: 4609632221692474}
-  offset: {x: 0, y: -0.599, z: 0}
 --- !u!146 &146136907833880356
 WheelCollider:
   m_ObjectHideFlags: 1

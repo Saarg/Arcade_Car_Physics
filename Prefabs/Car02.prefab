@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 146014540103652148}
   - component: {fileID: 114507247422366396}
   - component: {fileID: 114822347051870414}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: FLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 33651613850883534}
   - component: {fileID: 23465880405206270}
   - component: {fileID: 64995646527081334}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: cylinder_hollow_64
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 33823930712489214}
   - component: {fileID: 23403082541051626}
   - component: {fileID: 64862669887583528}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_fenderRounded_58
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4616151917948992}
   - component: {fileID: 33240038841552762}
   - component: {fileID: 23689876034443104}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: wheel_smallSports_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 146802126822764044}
   - component: {fileID: 114526905319013540}
   - component: {fileID: 114783648448176536}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: FRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4629044809684432}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 33240498175066368}
   - component: {fileID: 23879541751871942}
   - component: {fileID: 64563664088639640}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: trunk_default_51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 33251417388465388}
   - component: {fileID: 23219888741776158}
   - component: {fileID: 64139599982517820}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: windshield_default_53
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 33615958018835664}
   - component: {fileID: 23348734628281654}
   - component: {fileID: 64935494690157704}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_fenderRounded_59
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 146793865263719070}
   - component: {fileID: 114341878329182152}
   - component: {fileID: 114303260965533220}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: BLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 4079527284605248}
   - component: {fileID: 33528078060324650}
   - component: {fileID: 23319507113374050}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: wheel_smallSports_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 33770678076889852}
   - component: {fileID: 23875841630148104}
   - component: {fileID: 64520716916290244}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_fenderRounded_57
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 33499260255564218}
   - component: {fileID: 23887599439215412}
   - component: {fileID: 64724056045730398}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: hood_sport_52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 4978630911698712}
   - component: {fileID: 33607802808519220}
   - component: {fileID: 23825783724415624}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: wheel_smallSports_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 4799495039464946}
   - component: {fileID: 33905518040494060}
   - component: {fileID: 23645620612310484}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: wheel_smallSports_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 33179459447668410}
   - component: {fileID: 23269485723013924}
   - component: {fileID: 64689211186708196}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: cylinder_hollow_63
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 33468058988107782}
   - component: {fileID: 23913165399862224}
   - component: {fileID: 64988439519252148}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_spoilerSmall_55
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 33250889940894332}
   - component: {fileID: 23507695355528846}
   - component: {fileID: 64956224397795640}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_engine_61
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 33046271170817948}
   - component: {fileID: 23258266698527948}
   - component: {fileID: 64833144230944802}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: detail_fenderRounded_60
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 146504509095465980}
   - component: {fileID: 114800290297643028}
   - component: {fileID: 114649827415014558}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: BRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1895,12 +1895,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  throttleInput: Vertical
-  brakeInput: Fire3
+  throttleInput: ThrottleLinux
+  brakeInput: BrakeLinux
   turnInput: Horizontal
-  jumpInput: Jump
-  driftInput: Fire1
-  boostInput: Fire2
+  jumpInput: JumpLinux
+  driftInput: Fire1Linux
+  boostInput: Fire2Linux
   turnInputCurve:
     serializedVersion: 2
     m_Curve:
@@ -1970,7 +1970,7 @@ MonoBehaviour:
   jumpVel: 1.5
   driftIntensity: 1.3
   centerOfMass: {fileID: 4688843054088998}
-  downforce: 2
+  downforce: 3
   handbrake: 0
   allowDrift: 1
   speed: 0

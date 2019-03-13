@@ -38,7 +38,26 @@ namespace VehicleBehaviour.Utils {
 
 		// Select target from targets list using it's index
 		public void SetTargetIndex(int i) {
+			WheelVehicle v;
+
+			foreach(Transform t in targets)
+			{
+				v = t != null ? t.GetComponent<WheelVehicle>() : null;
+				if (v != null)
+				{
+					v.IsPlayer = false;
+					v.Handbrake = true;
+				}
+			}
+
 			target = targets[i % targets.Length];
+
+			v = target != null ? target.GetComponent<WheelVehicle>() : null;
+			if (v != null)
+			{
+				v.IsPlayer = true;
+				v.Handbrake = false;
+			}
 		}
 
 		void FixedUpdate() {

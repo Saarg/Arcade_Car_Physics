@@ -38,7 +38,6 @@ namespace VehicleBehaviour {
 			}
 		}
 
-		uint logCount = 0;
 		Quaternion targetAngle;
 		void FixedUpdate ()
 		{
