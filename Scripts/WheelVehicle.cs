@@ -188,12 +188,18 @@ namespace VehicleBehaviour {
             spawnPosition = transform.position;
             spawnRotation = transform.rotation;
 
-            if (centerOfMass)
+            if (_rb != null && centerOfMass != null)
             {
                 _rb.centerOfMass = centerOfMass.localPosition;
             }
 
             wheels = GetComponentsInChildren<WheelCollider>();
+
+            // Set the motor torque to a non null value because 0 means the wheels won't turn no matter what
+            foreach (WheelCollider wheel in wheels)
+            {
+                wheel.motorTorque = 0.0001f;
+            }
         }
 
         // Visual feedbacks and boost regen
@@ -250,7 +256,8 @@ namespace VehicleBehaviour {
             {
                 foreach (WheelCollider wheel in wheels)
                 {
-                    wheel.motorTorque = 0;
+                    // Don't zero out this value or the wheel completly lock up
+                    wheel.motorTorque = 0.0001f;
                     wheel.brakeTorque = brakeForce;
                 }
             }
@@ -258,7 +265,6 @@ namespace VehicleBehaviour {
             {
                 foreach (WheelCollider wheel in driveWheel)
                 {
-                    wheel.brakeTorque = 0;
                     wheel.motorTorque = throttle * motorTorque.Evaluate(speed) * 4;
                 }
             }
@@ -266,7 +272,6 @@ namespace VehicleBehaviour {
             {
                 foreach (WheelCollider wheel in wheels)
                 {
-                    wheel.motorTorque = 0;
                     wheel.brakeTorque = Mathf.Abs(throttle) * brakeForce;
                 }
             }
