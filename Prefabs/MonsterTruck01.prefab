@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4575367100579376}
   - component: {fileID: 33736934981867278}
   - component: {fileID: 23451683589733810}
-  - component: {fileID: 65453884575029622}
+  - component: {fileID: 2609608592421880177}
   m_Layer: 9
   m_Name: wheel_dirt_42
   m_TagString: Untagged
@@ -158,8 +158,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &65453884575029622
-BoxCollider:
+--- !u!135 &2609608592421880177
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -169,7 +169,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.21630949, y: 0.3, z: 0.3}
+  m_Radius: 0.15
   m_Center: {x: 0.007471051, y: 0, z: 0}
 --- !u!1 &1061463766440372
 GameObject:
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 4420579591150928}
   - component: {fileID: 33634660681853708}
   - component: {fileID: 23352347834478744}
-  - component: {fileID: 65851628818173754}
+  - component: {fileID: 7422441643298441793}
   m_Layer: 9
   m_Name: wheel_dirt_42
   m_TagString: Untagged
@@ -760,8 +760,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &65851628818173754
-BoxCollider:
+--- !u!135 &7422441643298441793
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -771,7 +771,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.21630949, y: 0.3, z: 0.3}
+  m_Radius: 0.15
   m_Center: {x: 0.007471051, y: 0, z: 0}
 --- !u!1 &1404696704927990
 GameObject:
@@ -5623,7 +5623,7 @@ GameObject:
   - component: {fileID: 4456451631630122}
   - component: {fileID: 33042915294441468}
   - component: {fileID: 23276823538946912}
-  - component: {fileID: 65757406935274358}
+  - component: {fileID: 210980197427151039}
   m_Layer: 9
   m_Name: wheel_dirt_42
   m_TagString: Untagged
@@ -5691,8 +5691,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &65757406935274358
-BoxCollider:
+--- !u!135 &210980197427151039
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5702,7 +5702,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.21630949, y: 0.3, z: 0.3}
+  m_Radius: 0.15
   m_Center: {x: 0.007471051, y: 0, z: 0}
 --- !u!1 &1668987779775724
 GameObject:
@@ -10881,7 +10881,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -15937,7 +15937,7 @@ GameObject:
   - component: {fileID: 4863861196130644}
   - component: {fileID: 33435733343262528}
   - component: {fileID: 23301419366219348}
-  - component: {fileID: 65573970450442460}
+  - component: {fileID: 2268213187887948547}
   m_Layer: 9
   m_Name: wheel_dirt_42
   m_TagString: Untagged
@@ -16005,8 +16005,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &65573970450442460
-BoxCollider:
+--- !u!135 &2268213187887948547
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16016,7 +16016,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.21630949, y: 0.3, z: 0.3}
+  m_Radius: 0.15
   m_Center: {x: 0.007471051, y: 0, z: 0}
 --- !u!1 &1944056339131938
 GameObject:
