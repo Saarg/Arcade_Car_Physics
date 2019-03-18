@@ -1731,12 +1731,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  throttleInput: ThrottleLinux
-  brakeInput: BrakeLinux
+  throttleInput: Vertical
+  brakeInput: Fire3
   turnInput: Horizontal
-  jumpInput: JumpLinux
-  driftInput: Fire1Linux
-  boostInput: Fire2Linux
+  jumpInput: Jump
+  driftInput: Fire1
+  boostInput: "Fire2\x13"
   turnInputCurve:
     serializedVersion: 2
     m_Curve:
@@ -1810,7 +1810,7 @@ MonoBehaviour:
   driftIntensity: 0
   centerOfMass: {fileID: 4998468020761470}
   downforce: 1
-  handbrake: 0
+  handbrake: 1
   allowDrift: 1
   speed: 0
   gasParticles: []

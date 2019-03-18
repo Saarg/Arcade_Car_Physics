@@ -227,13 +227,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!114 &114609253572208262
 MonoBehaviour:
@@ -450,13 +450,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!114 &114318860681159014
 MonoBehaviour:
@@ -5569,13 +5569,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!114 &114469993242555488
 MonoBehaviour:
@@ -10760,12 +10760,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  throttleInput: ThrottleLinux
-  brakeInput: BrakeLinux
+  throttleInput: Vertical
+  brakeInput: Fire3
   turnInput: Horizontal
-  jumpInput: JumpLinux
-  driftInput: Fire1Linux
-  boostInput: Fire2Linux
+  jumpInput: Jump
+  driftInput: Fire1
+  boostInput: "Fire2\x13"
   turnInputCurve:
     serializedVersion: 2
     m_Curve:
@@ -10838,10 +10838,12 @@ MonoBehaviour:
   driftIntensity: 0
   centerOfMass: {fileID: 4200519574544834}
   downforce: 1
-  handbrake: 0
+  handbrake: 1
   allowDrift: 1
   speed: 0
-  gasParticles: []
+  gasParticles:
+  - {fileID: 198785129639086970}
+  - {fileID: 198062777813483970}
   allowBoost: 1
   maxBoost: 10
   boost: 10
@@ -10849,7 +10851,9 @@ MonoBehaviour:
   boostForce: 15000
   boosting: 0
   jumping: 0
-  boostParticles: []
+  boostParticles:
+  - {fileID: 198598626078393738}
+  - {fileID: 198433029089565692}
   boostClip: {fileID: 8300000, guid: 7c29c309722a2444582a425e8e6aeb77, type: 3}
   boostSource: {fileID: 82985627482436688}
 --- !u!114 &114371053880874554
@@ -11118,13 +11122,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_Enabled: 1
 --- !u!114 &114150289077716770
 MonoBehaviour:

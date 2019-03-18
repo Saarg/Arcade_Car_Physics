@@ -4765,7 +4765,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 3
   m_Enabled: 1
 --- !u!114 &114507247422366396
 MonoBehaviour:
@@ -9829,7 +9829,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 3
   m_Enabled: 1
 --- !u!114 &114526905319013540
 MonoBehaviour:
@@ -10251,7 +10251,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 3
   m_Enabled: 1
 --- !u!114 &114341878329182152
 MonoBehaviour:
@@ -10390,7 +10390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564698262129550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4704918474422382}
@@ -10656,41 +10656,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  throttleInput: ThrottleLinux
-  brakeInput: BrakeLinux
+  throttleInput: Vertical
+  brakeInput: Fire3
   turnInput: Horizontal
-  jumpInput: JumpLinux
-  driftInput: Fire1Linux
-  boostInput: Fire2Linux
+  jumpInput: Jump
+  driftInput: Fire1
+  boostInput: "Fire2\x13"
   turnInputCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -1
       value: -1
-      inSlope: 2.1869175
-      outSlope: 2.1869175
+      inSlope: 3.329599
+      outSlope: 3.329599
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.052173913
+      outWeight: 0.012917399
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 0.11232241
+      outSlope: 0.11232241
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.15898749
     - serializedVersion: 3
       time: 1.0021973
       value: 1.0023422
-      inSlope: 2.0658808
-      outSlope: 2.0658808
+      inSlope: 2.9596453
+      outSlope: 2.9596453
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.13125665
+      inWeight: 0.024167007
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -10731,8 +10731,8 @@ MonoBehaviour:
   jumpVel: 1.5
   driftIntensity: 1.3
   centerOfMass: {fileID: 4688843054088998}
-  downforce: 3
-  handbrake: 0
+  downforce: 8
+  handbrake: 1
   allowDrift: 1
   speed: 0
   gasParticles:
@@ -20954,7 +20954,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 3
   m_Enabled: 1
 --- !u!114 &114800290297643028
 MonoBehaviour:

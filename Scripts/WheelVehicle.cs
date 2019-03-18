@@ -106,7 +106,7 @@ namespace VehicleBehaviour {
         [SerializeField] Transform centerOfMass;
 
         // Force aplied downwards on the car, proportional to the car speed
-        [Range(0.5f, 5f)]
+        [Range(0.5f, 10f)]
         [SerializeField] float downforce = 1.0f;
         public float Downforce { get{ return downforce; } set{ downforce = Mathf.Clamp(value, 0, 5); } }     
 
