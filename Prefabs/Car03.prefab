@@ -16046,7 +16046,7 @@ MonoBehaviour:
   jumpVel: 1.2
   driftIntensity: 0.8
   centerOfMass: {fileID: 4108736393935798}
-  downforce: 1
+  downforce: 9
   handbrake: 1
   allowDrift: 1
   speed: 0.00000016103033

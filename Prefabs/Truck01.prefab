@@ -4988,8 +4988,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   brakeForce: 3000
-  steerAngle: 30
-  steerSpeed: 0.2
+  steerAngle: 25
+  steerSpeed: 0.1
   jumpVel: 1.3
   driftIntensity: 0
   centerOfMass: {fileID: 7555878754248119003}
@@ -5233,7 +5233,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &8463409413907925442
 SphereCollider:
@@ -5246,7 +5246,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &7868990463382542713
 SphereCollider:
@@ -5259,7 +5259,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &8533051851304493384
 SphereCollider:
@@ -5272,7 +5272,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &573746463312016513
 SphereCollider:
@@ -5285,7 +5285,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6727149227349991291
 GameObject:
@@ -14803,7 +14803,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8285438310848865025
 GameObject:

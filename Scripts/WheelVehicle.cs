@@ -320,13 +320,13 @@ namespace VehicleBehaviour {
 
                 if (steering != 0)
                     driftForce *= _rb.mass * speed/7f * throttle * steering/steerAngle;
-                Vector3 driftTorque = transform.up * 0.1f  * steering/steerAngle;
+                Vector3 driftTorque = transform.up * 0.1f * steering/steerAngle;
 
 
                 _rb.AddForce(driftForce * driftIntensity, ForceMode.Force);
                 _rb.AddTorque(driftTorque * driftIntensity, ForceMode.VelocityChange);             
             }
-
+            
             // Downforce
             _rb.AddForce(-transform.up * speed * downforce);
         }

@@ -5103,8 +5103,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0.15, z: 0}
   m_Radius: 0.3
   m_SuspensionSpring:
-    spring: 44000
-    damper: 11000
+    spring: 55000
+    damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -5152,7 +5152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 0.2
   decayTime: 60
-  material: {fileID: 2100000, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
+  material: {fileID: 2100000, guid: cf67cfc288c6d4eba9e67404b1952a43, type: 2}
   roughness: 0
   softSourceEnd: 1
   trailing: 0
@@ -5716,7 +5716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 0.1
   decayTime: 60
-  material: {fileID: 2100000, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
+  material: {fileID: 2100000, guid: cf67cfc288c6d4eba9e67404b1952a43, type: 2}
   roughness: 0
   softSourceEnd: 1
   trailing: 0
@@ -5955,7 +5955,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 500
+      value: 700
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5993,12 +5993,12 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   brakeForce: 1500
-  steerAngle: 30
-  steerSpeed: 0.2
+  steerAngle: 25
+  steerSpeed: 0.15
   jumpVel: 1.5
-  driftIntensity: 1
+  driftIntensity: 0
   centerOfMass: {fileID: 4023411105908788}
-  downforce: 2
+  downforce: 3
   handbrake: 1
   allowDrift: 1
   speed: 0
@@ -6812,8 +6812,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0.15, z: 0}
   m_Radius: 0.3
   m_SuspensionSpring:
-    spring: 22000
-    damper: 5500
+    spring: 55000
+    damper: 4500
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
@@ -6861,7 +6861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 0.2
   decayTime: 60
-  material: {fileID: 2100000, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
+  material: {fileID: 2100000, guid: cf67cfc288c6d4eba9e67404b1952a43, type: 2}
   roughness: 0
   softSourceEnd: 1
   trailing: 0
@@ -17082,7 +17082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 0.1
   decayTime: 60
-  material: {fileID: 2100000, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
+  material: {fileID: 2100000, guid: cf67cfc288c6d4eba9e67404b1952a43, type: 2}
   roughness: 0
   softSourceEnd: 1
   trailing: 0
