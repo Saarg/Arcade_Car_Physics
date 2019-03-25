@@ -3,9 +3,11 @@
  * 
  * This is distributed under the MIT Licence (see LICENSE.md for details)
  */
+using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace VehicleBehaviour.Utils {
 	public class CameraFollow : MonoBehaviour {
@@ -28,9 +30,14 @@ namespace VehicleBehaviour.Utils {
 		[Range(0, 10)]		
 		[SerializeField] float lerpRotationMultiplier = 1f;
 
+		// Speedometer
+		[SerializeField] Text speedometer;
+
 		// We use a rigidbody to prevent the camera from going in walls but it means sometime it can get stuck
 		Rigidbody rb;
 		Rigidbody target_rb;
+
+		WheelVehicle vehicle;
 
 		void Start () {
 			rb = GetComponent<Rigidbody>();
@@ -52,11 +59,11 @@ namespace VehicleBehaviour.Utils {
 
 			target = targets[i % targets.Length];
 
-			v = target != null ? target.GetComponent<WheelVehicle>() : null;
-			if (v != null)
+			vehicle = target != null ? target.GetComponent<WheelVehicle>() : null;
+			if (vehicle != null)
 			{
-				v.IsPlayer = true;
-				v.Handbrake = false;
+				vehicle.IsPlayer = true;
+				vehicle.Handbrake = false;
 			}
 		}
 
@@ -87,6 +94,21 @@ namespace VehicleBehaviour.Utils {
 			if (transform.position.y < 0.5f) {
 				transform.position = new Vector3(transform.position.x , 0.5f, transform.position.z);
 			}
+
+			// Update speedometer
+			if (speedometer != null && vehicle != null)
+			{
+				StringBuilder sb = new StringBuilder();
+				sb.Append("Speed:");
+				sb.Append(((int) (vehicle.Speed)).ToString());
+
+				speedometer.text = sb.ToString();
+			}
+			else if (speedometer.text != "")
+			{
+				speedometer.text = "";
+			}
+			
 		}
 	}
 }
