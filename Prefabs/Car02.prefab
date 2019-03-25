@@ -4759,13 +4759,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 2.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 3
+    m_Stiffness: 2.5
   m_Enabled: 1
 --- !u!114 &114507247422366396
 MonoBehaviour:
@@ -9823,13 +9823,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 2.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 3
+    m_Stiffness: 2.5
   m_Enabled: 1
 --- !u!114 &114526905319013540
 MonoBehaviour:
@@ -10245,13 +10245,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 2.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 3
+    m_Stiffness: 2.5
   m_Enabled: 1
 --- !u!114 &114341878329182152
 MonoBehaviour:
@@ -10714,6 +10714,15 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.12282609
     - serializedVersion: 3
+      time: 91.11788
+      value: 298.45386
+      inSlope: -1.2553725
+      outSlope: -1.2553725
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
       time: 300
       value: 0
       inSlope: 0
@@ -10727,7 +10736,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   brakeForce: 1000
   steerAngle: 25
-  steerSpeed: 0.2
+  steerSpeed: 0.25
   jumpVel: 1.5
   driftIntensity: 1.3
   centerOfMass: {fileID: 4688843054088998}
@@ -20948,13 +20957,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 3
+    m_Stiffness: 2.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 3
+    m_Stiffness: 2.5
   m_Enabled: 1
 --- !u!114 &114800290297643028
 MonoBehaviour:
