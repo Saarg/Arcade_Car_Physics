@@ -265,7 +265,7 @@ namespace VehicleBehaviour {
             {
                 foreach (WheelCollider wheel in driveWheel)
                 {
-                    wheel.motorTorque = throttle * motorTorque.Evaluate(speed) * 4;
+                    wheel.motorTorque = throttle * motorTorque.Evaluate(speed) * 8 / driveWheel.Length;
                 }
             }
             else
