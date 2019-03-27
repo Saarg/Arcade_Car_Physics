@@ -9933,13 +9933,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c241727a8fc83048b56bdd0b450f8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 0
+  isPlayer: 1
   throttleInput: Vertical
   brakeInput: Fire3
   turnInput: Horizontal
   jumpInput: Jump
   driftInput: Fire1
-  boostInput: "Fire2\x13"
+  boostInput: Fire2
   turnInputCurve:
     serializedVersion: 2
     m_Curve:
@@ -10021,7 +10021,7 @@ MonoBehaviour:
   driftIntensity: 1
   centerOfMass: {fileID: 4317052608050062}
   downforce: 8
-  handbrake: 1
+  handbrake: 0
   allowDrift: 1
   speed: 0
   gasParticles:

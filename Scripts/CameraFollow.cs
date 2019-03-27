@@ -101,6 +101,7 @@ namespace VehicleBehaviour.Utils {
 				StringBuilder sb = new StringBuilder();
 				sb.Append("Speed:");
 				sb.Append(((int) (vehicle.Speed)).ToString());
+				sb.Append(" Kph");
 
 				speedometer.text = sb.ToString();
 			}
