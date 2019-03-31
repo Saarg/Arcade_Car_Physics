@@ -9629,12 +9629,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
-  throttleInput: Throttle
-  brakeInput: Brake
+  throttleInput: Vertical
+  brakeInput: Fire3
   turnInput: Horizontal
   jumpInput: Jump
-  driftInput: Drift
-  boostInput: Boost
+  driftInput: Fire1
+  boostInput: Fire2
   turnInputCurve:
     serializedVersion: 2
     m_Curve:

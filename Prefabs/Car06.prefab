@@ -324,8 +324,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.025403226
     - serializedVersion: 3
-      time: 300
-      value: 1.0049744
+      time: 200
+      value: 0
       inSlope: 2.5523934
       outSlope: 2.5523934
       tangentMode: 0
@@ -10225,7 +10225,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 0.9
+    m_Stiffness: 1
   m_Enabled: 1
 --- !u!114 &7925044100675540944
 MonoBehaviour:
@@ -10355,7 +10355,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 0.9
+    m_Stiffness: 1
   m_Enabled: 1
 --- !u!114 &7925122955536936124
 MonoBehaviour:
@@ -10532,7 +10532,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 0.9
+    m_Stiffness: 1
   m_Enabled: 1
 --- !u!114 &7924798822467538956
 MonoBehaviour:
@@ -20037,7 +20037,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 0.9
+    m_Stiffness: 1
   m_Enabled: 1
 --- !u!114 &7925103306161025700
 MonoBehaviour:
