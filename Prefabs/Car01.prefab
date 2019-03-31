@@ -9986,7 +9986,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 200
+      value: 400
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -9995,7 +9995,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 50
-      value: 300
+      value: 500
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -10014,6 +10014,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  diffGearing: 10
   brakeForce: 1500
   steerAngle: 30
   steerSpeed: 0.2

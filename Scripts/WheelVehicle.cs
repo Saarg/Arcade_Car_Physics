@@ -70,6 +70,12 @@ namespace VehicleBehaviour {
          *  the longer the curve the faster it gets
          */
         [SerializeField] AnimationCurve motorTorque = new AnimationCurve(new Keyframe(0, 200), new Keyframe(50, 300), new Keyframe(200, 0));
+
+        // Differential gearing ratio
+        [Range(2, 16)]
+        [SerializeField] float diffGearing = 4.0f;
+        public float DiffGearing { get { return diffGearing; } set { diffGearing = value; } }
+
         // Basicaly how hard it brakes
         [SerializeField] float brakeForce = 1500.0f;
         public float BrakeForce { get { return brakeForce; } set { brakeForce = value; } }
@@ -265,7 +271,7 @@ namespace VehicleBehaviour {
             {
                 foreach (WheelCollider wheel in driveWheel)
                 {
-                    wheel.motorTorque = throttle * motorTorque.Evaluate(speed) * 8 / driveWheel.Length;
+                    wheel.motorTorque = throttle * motorTorque.Evaluate(speed) * diffGearing / driveWheel.Length;
                 }
             }
             else

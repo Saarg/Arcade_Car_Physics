@@ -4987,6 +4987,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  diffGearing: 16
   brakeForce: 3000
   steerAngle: 25
   steerSpeed: 0.1

@@ -10803,21 +10803,21 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 996.8635
-      inSlope: 3.8876243
-      outSlope: 3.8876243
+      value: 1200
+      inSlope: -1.228742
+      outSlope: -1.228742
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.09162896
+      outWeight: 0.12106672
     - serializedVersion: 3
-      time: 29.68118
+      time: 50
       value: 505.75632
-      inSlope: -58.869144
+      inSlope: -50.291386
       outSlope: -11.163643
       tangentMode: 1
       weightedMode: 0
-      inWeight: 0.035015807
+      inWeight: 0.026911926
       outWeight: 0.042171367
     - serializedVersion: 3
       time: 130.57607
@@ -10831,6 +10831,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  diffGearing: 8
   brakeForce: 14000
   steerAngle: 20
   steerSpeed: 0.1
