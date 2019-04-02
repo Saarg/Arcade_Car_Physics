@@ -10715,7 +10715,7 @@ MonoBehaviour:
       outWeight: 0.12282609
     - serializedVersion: 3
       time: 91.11788
-      value: 298.45386
+      value: 400
       inSlope: 0.028216526
       outSlope: 0.028216526
       tangentMode: 0
@@ -10734,7 +10734,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  diffGearing: 4
+  diffGearing: 6
   brakeForce: 1000
   steerAngle: 25
   steerSpeed: 0.25

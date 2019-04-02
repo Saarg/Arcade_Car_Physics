@@ -54,27 +54,7 @@ namespace VehicleBehaviour
 		// Use this for initialization
 		void Start () 
 		{
-			exist = false;
-
-			foreach(string filename in _saveFileNames)
-			{
-				if (File.Exists(Application.persistentDataPath + "/" + filename))
-				{
-					Debug.Log("Loaded ghost for " + name + " at " + Application.persistentDataPath + "/" + filename);
-					IFormatter formatter = new BinaryFormatter();
-					Stream stream = new FileStream(Application.persistentDataPath + "/" + filename, FileMode.Open, FileAccess.Read, FileShare.Read);
-					duration = (float)formatter.Deserialize(stream);
-					freq = (int)formatter.Deserialize(stream);
-					score = (float)formatter.Deserialize(stream);
-
-					_data = (List<GhostData>)formatter.Deserialize(stream);
-					stream.Close();
-
-					exist = true;
-
-					break;
-				}
-			}
+			LoadData();
 
 			_vehicle = GetComponent<WheelVehicle>();
 			_rb = GetComponent<Rigidbody>();
@@ -84,7 +64,8 @@ namespace VehicleBehaviour
 		void Update () 
 		{
 			float time = Time.realtimeSinceStartup - _startTime;
-			int index = (int)(time * freq);
+			
+			int index = Mathf.Clamp((int)(time * freq), 0, _data != null ? _data.Count - 2 : 0);
 
 			if (run && ((time < duration && index < _data.Count - 1) || _startTime == 0) && _data != null)
 			{
@@ -117,6 +98,66 @@ namespace VehicleBehaviour
 					_rb.velocity = Vector3.Lerp(speed, speedf, (time * freq) - index);
 				}
 			}
+		}
+
+		void LoadData()
+		{
+			exist = false;
+
+			foreach(string filename in _saveFileNames)
+			{
+				if (File.Exists(Application.persistentDataPath + "/" + filename))
+				{
+					Debug.Log("Loaded ghost for " + name + " at " + Application.persistentDataPath + "/" + filename);
+					IFormatter formatter = new BinaryFormatter();
+					Stream stream = new FileStream(Application.persistentDataPath + "/" + filename, FileMode.Open, FileAccess.Read, FileShare.Read);
+					duration = (float)formatter.Deserialize(stream);
+					freq = (int)formatter.Deserialize(stream);
+					score = (float)formatter.Deserialize(stream);
+
+					_data = (List<GhostData>)formatter.Deserialize(stream);
+					stream.Close();
+
+					exist = true;
+
+					break;
+				}
+			}
+		}
+
+		public void LoadData(string filename)
+		{
+			if (File.Exists(Application.persistentDataPath + "/" + filename))
+			{
+				Debug.Log("Loaded ghost for " + name + " at " + Application.persistentDataPath + "/" + filename);
+				IFormatter formatter = new BinaryFormatter();
+				Stream stream = new FileStream(Application.persistentDataPath + "/" + filename, FileMode.Open, FileAccess.Read, FileShare.Read);
+				duration = (float)formatter.Deserialize(stream);
+				freq = (int)formatter.Deserialize(stream);
+				score = (float)formatter.Deserialize(stream);
+
+				_data = (List<GhostData>)formatter.Deserialize(stream);
+				stream.Close();
+
+				exist = true;
+			}
+		}
+
+		public void StartGhost()
+		{
+			run = true;
+		}
+
+		public void PauseGhost()
+		{
+			run = false;
+		}
+
+		public void RestartGhost()
+		{
+			_startTime = 0;
+
+			StartGhost();
 		}
 	}
 
