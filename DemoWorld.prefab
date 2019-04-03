@@ -5831,7 +5831,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 6
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -5841,9 +5841,7 @@ MonoBehaviour:
 
     By Saarg
 
-    twitter: @grimion_
-
-    Github: https://github.com/Saarg/Arcade_Car_Physics'
+    twitter: @grimion_'
 --- !u!114 &2340935747804837711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10089,7 +10087,7 @@ MonoBehaviour:
   - {fileID: 1828731790558544855}
   - {fileID: 5848342529821775920}
   - {fileID: 5165958727520843627}
-  _ghost: {fileID: 0}
+  _ghost: {fileID: 7923717980196163738}
 --- !u!1 &5048779052606894465
 GameObject:
   m_ObjectHideFlags: 0

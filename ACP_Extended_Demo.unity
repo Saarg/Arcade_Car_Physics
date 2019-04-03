@@ -302,6 +302,12 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 386345848811705122, guid: b24f006dd77a94f649454da633b6e015,
+        type: 3}
+      propertyPath: m_Text
+      value: "Throttle: W/Vertical\nBrake: S/Fire3\nTurn: A-D/Horizontal\nJump Space/A\nDrift:
+        LAlt/Fire1\nBoost: LShift/Fire2\x13\x13"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b24f006dd77a94f649454da633b6e015, type: 3}
 --- !u!108 &209594571 stripped
