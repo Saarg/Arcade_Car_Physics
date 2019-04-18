@@ -1,10 +1,14 @@
 # Arcade Car Physics (ACP)
 
 [asset store page](https://assetstore.unity.com/packages/tools/physics/arcade-car-physics-119484)
+[extented version asset store page](https://assetstore.unity.com/packages/slug/142918)
 
 This unity package provides scripts ans exemples to build arcade cars in Unity3D using the built in wheel colliders. While the wheel colliders have a reputation to be buggy and unstable I found that it is not true but they are a bit tricky to get right.
 
 In this package you'll find one demo scene with 4 exemple prefabs with low poly models made using [kenney's asset forge](https://kenney.nl/). Those prefabs are using the default unity inputs (Horizontal, Vertical, Jump, Fire1-3) but you'll need to change those to get a better driving experience and I would advice the use of a controller like most other car games.
+
+[How to create a car, video tutorial](https://youtu.be/XUXuC45BkIk)
+[More documentation and demo](http://saarg.me/acp/2.0/demo/index.html)
 
 ## Vehicle
 
@@ -52,6 +56,8 @@ You have two list of wheels: the drive wheels and the turn wheels.
 ### Behaviour
 
 - Motor Torque: Animation curve representing the motor torque in Newton depending on the speed of the car. Having a negative torque after the top speed prevents going faster in some conditions
+
+- Diff Gearing: The differential gearing applyed between the motor and the wheels.
 
 - Brake Force: The power of your brakes, mostly determinesif we can lock the wheels.
 
@@ -105,10 +111,14 @@ This script emits trails when the wheels start sliding around and drifting. The 
 
 Basic script used to have a camera following the cars in the demo scene, feel free to reuse it.
 
-### Ghost (Experimental)
+### Ghost
 
 A Ghost script and Ghost recorder are provided to save your cars time and movement. Basicaly use the GhostRecorder to record and put a Ghost script on the ghost you want to replay.
 Exemple will come but don't hesitate to ask me if you have any questions about this.
+
+### Extended version
+
+The [extented version](https://assetstore.unity.com/packages/slug/142918) adds some prefabs to show a bit more of what you can do with ACP. The most interesting exemples are the drift car, the motorbike and the tank.
 
 ## Exemple
 

@@ -14,6 +14,7 @@ using UnityEngine.SceneManagement;
 
 namespace VehicleBehaviour 
 {
+	// Data saved at every ghost tick
 	[Serializable]
 	public class GhostData 
 	{
@@ -29,53 +30,48 @@ namespace VehicleBehaviour
 
 	}
 
+	// MonoBehaviour to place on a GameObject to read and replay a save
 	public class Ghost : MonoBehaviour 
 	{
+		// List of data loaded
 		List<GhostData> _data = null;
+
+		// Is the replay running
 		public bool run;
+
+		// Time anchor for the replay
 		float _startTime = 0;
 
+		// The length in seconds of the saved race
 		public float duration 
 		{ internal set; get;}
+
+		// Frequency in Hz of the saved data
 		public int freq
 		{ internal set; get;}
 
+		// True if the data has been loaded
 		public bool exist 
 		{ internal set; get;}
 
+		// A recorded ghosst can also have a score saved with it
 		public float score
 		{ internal set; get;}
 
+		// Ref to the WheelVehicle
 		WheelVehicle _vehicle;
+		// Ref to the Rigidbody
 		Rigidbody _rb;
 		
+		// List of filenames to try to open on start
 		[SerializeField] string[] _saveFileNames;
 
-		// Use this for initialization
 		void Start () 
 		{
-			exist = false;
+			// Load first file found
+			LoadData();
 
-			foreach(string filename in _saveFileNames)
-			{
-				if (File.Exists(Application.persistentDataPath + "/" + filename))
-				{
-					Debug.Log("Loaded ghost for " + name + " at " + Application.persistentDataPath + "/" + filename);
-					IFormatter formatter = new BinaryFormatter();
-					Stream stream = new FileStream(Application.persistentDataPath + "/" + filename, FileMode.Open, FileAccess.Read, FileShare.Read);
-					duration = (float)formatter.Deserialize(stream);
-					freq = (int)formatter.Deserialize(stream);
-					score = (float)formatter.Deserialize(stream);
-
-					_data = (List<GhostData>)formatter.Deserialize(stream);
-					stream.Close();
-
-					exist = true;
-
-					break;
-				}
-			}
-
+			// GetComponents
 			_vehicle = GetComponent<WheelVehicle>();
 			_rb = GetComponent<Rigidbody>();
 		}
@@ -83,9 +79,12 @@ namespace VehicleBehaviour
 		// Update is called once per frame
 		void Update () 
 		{
+			// Time since the ghost started
 			float time = Time.realtimeSinceStartup - _startTime;
-			int index = (int)(time * freq);
+			// Index of the data according to time
+			int index = Mathf.Clamp((int)(time * freq), 0, _data != null ? _data.Count - 2 : 0);
 
+			// Read and apply data
 			if (run && ((time < duration && index < _data.Count - 1) || _startTime == 0) && _data != null)
 			{
 				if (_startTime == 0)
@@ -118,24 +117,95 @@ namespace VehicleBehaviour
 				}
 			}
 		}
+
+		// Private method to load first found in _saveFileNames
+		void LoadData()
+		{
+			exist = false;
+
+			foreach(string filename in _saveFileNames)
+			{
+				if (File.Exists(Application.persistentDataPath + "/" + filename))
+				{
+					Debug.Log("Loaded ghost for " + name + " at " + Application.persistentDataPath + "/" + filename);
+					IFormatter formatter = new BinaryFormatter();
+					Stream stream = new FileStream(Application.persistentDataPath + "/" + filename, FileMode.Open, FileAccess.Read, FileShare.Read);
+					duration = (float)formatter.Deserialize(stream);
+					freq = (int)formatter.Deserialize(stream);
+					score = (float)formatter.Deserialize(stream);
+
+					_data = (List<GhostData>)formatter.Deserialize(stream);
+					stream.Close();
+
+					exist = true;
+
+					break;
+				}
+			}
+		}
+
+		// Load a specific file 
+		public void LoadData(string filename)
+		{
+			if (File.Exists(Application.persistentDataPath + "/" + filename))
+			{
+				Debug.Log("Loaded ghost for " + name + " at " + Application.persistentDataPath + "/" + filename);
+				IFormatter formatter = new BinaryFormatter();
+				Stream stream = new FileStream(Application.persistentDataPath + "/" + filename, FileMode.Open, FileAccess.Read, FileShare.Read);
+				duration = (float)formatter.Deserialize(stream);
+				freq = (int)formatter.Deserialize(stream);
+				score = (float)formatter.Deserialize(stream);
+
+				_data = (List<GhostData>)formatter.Deserialize(stream);
+				stream.Close();
+
+				exist = true;
+			}
+		}
+
+		public void StartGhost()
+		{
+			run = true;
+		}
+
+		public void PauseGhost()
+		{
+			run = false;
+		}
+
+		public void RestartGhost()
+		{
+			_startTime = 0;
+
+			StartGhost();
+		}
 	}
 
+	// Class used to record a ghost
 	public class GhostRecorder 
 	{
+		// Components
 		WheelVehicle _vehicle = null;
 		Transform _vehicleT = null;
 		Rigidbody _vehicleR = null;
+
+		// Data list
 		List<GhostData> _data = null;
 
+		// The length in seconds of the saved race
 		public float duration 
 		{ internal set; get;}
+		// Frequency in Hz of the saved data
 		public int freq
 		{ internal set; get;}
 		
+		// Internal bool used to stop recording
 		bool requestStop = false;
 
+		// Score to set manually if you want
 		public float score;
 
+		// Constructor setting up the recorder
 		public GhostRecorder(float duration, int freq, ref WheelVehicle vehicle)
 		{
 			_vehicle = vehicle;
@@ -149,6 +219,7 @@ namespace VehicleBehaviour
 			_data = new List<GhostData>((int)(this.duration * this.freq));
 		}
 
+		// Record coroutine to start from your gamemanager monobehavior
 		float _startTime = Time.realtimeSinceStartup;
 		public IEnumerator RecordCoroutine(bool allowOverTime = false)
 		{
@@ -189,12 +260,14 @@ namespace VehicleBehaviour
 			Debug.Log("Finished recording ghost for " + _vehicle.name);
 		}
 
+		// Stop the recording
 		public void Stop()
 		{
 			duration = Time.realtimeSinceStartup - _startTime;
 			requestStop = true;
 		}
 
+		// Save the recording in the persistentDataPath
 		public void Save(string saveName)
 		{
 			IFormatter formatter = new BinaryFormatter();
