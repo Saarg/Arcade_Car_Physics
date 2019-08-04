@@ -3,25 +3,24 @@
  * 
  * This is distributed under the MIT Licence (see LICENSE.md for details)
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 namespace VehicleBehaviour {
     public class Trailor : MonoBehaviour
     {
-        [SerializeField] Transform centerOfMass;
+        [SerializeField] Transform centerOfMass = default;
 
-        Rigidbody _rb;
-        WheelCollider[] wheels;
+        Rigidbody rb = default;
+        WheelCollider[] wheels = new WheelCollider[0];
 
         // Start is called before the first frame update
         void Start()
         {
-            _rb = GetComponent<Rigidbody>();
-            if (_rb != null && centerOfMass != null)
+            rb = GetComponent<Rigidbody>();
+            if (rb != null && centerOfMass != null)
             {
-                _rb.centerOfMass = centerOfMass.localPosition;
+                rb.centerOfMass = centerOfMass.localPosition;
             }
 
             wheels = GetComponentsInChildren<WheelCollider>();

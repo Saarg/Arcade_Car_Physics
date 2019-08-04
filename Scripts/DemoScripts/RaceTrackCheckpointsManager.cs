@@ -3,72 +3,72 @@
  * 
  * This is distributed under the MIT Licence (see LICENSE.md for details)
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.Serialization;
 using VehicleBehaviour;
 
 public class RaceTrackCheckpointsManager : MonoBehaviour
 {
-    float _startTime = -1.0f;
+    float startTime = -1.0f;
 
-    int _lastCP = 0;
+    int lastCp = 0;
 
-    [SerializeField] CheckPointEvent[] checkPoints;
+    [SerializeField] CheckPointEvent[] checkPoints = new CheckPointEvent[0];
 
-    [SerializeField] Ghost _ghost;
-    GhostRecorder _recorder;
+    [FormerlySerializedAs("_ghost")] [SerializeField] Ghost ghost = default;
+    GhostRecorder recorder = default;
 
     void StartRace(WheelVehicle vehicle)
     {
-        _startTime = Time.realtimeSinceStartup;
+        startTime = Time.realtimeSinceStartup;
 
-        _lastCP = 1;
+        lastCp = 1;
 
         Debug.Log("Race start!");
 
         if (vehicle != null)
         {
-            _recorder = new GhostRecorder(60.0f, 10, ref vehicle);
-            StartCoroutine(_recorder.RecordCoroutine());
+            recorder = new GhostRecorder(60.0f, 10, ref vehicle);
+            StartCoroutine(recorder.RecordCoroutine());
         }
         else
         {
-            _recorder = null;
+            recorder = null;
         }
 
-        if (_ghost != null)
+        if (ghost != null)
         {
-            _ghost.LoadData(vehicle.name);
-            _ghost.RestartGhost();
+            ghost.LoadData(vehicle.name);
+            ghost.RestartGhost();
         }
     }
 
     public void OnCheckPointEnter(CheckPointEvent cpEvent, Collider other)
     {
-        if (_lastCP == (checkPoints.Length - 1) && checkPoints[checkPoints.Length - 1] == cpEvent)
+        if (lastCp == (checkPoints.Length - 1) && checkPoints[checkPoints.Length - 1] == cpEvent)
         {   // This is the finish
-            Debug.Log(Time.realtimeSinceStartup - _startTime);
+            Debug.Log(Time.realtimeSinceStartup - startTime);
 
             WheelVehicle vehicle = other.GetComponentInParent<WheelVehicle>();
 
-            _recorder.Stop();
-            _recorder.Save(vehicle.name);
+            recorder.Stop();
+            recorder.Save(vehicle.name);
 
             if (checkPoints[checkPoints.Length - 1] == checkPoints[0])
             {   // If it's a loop start a new timer
                 StartRace(vehicle);
             }
         }
-        else if (checkPoints[0] == cpEvent && _lastCP != 1)
+        else if (checkPoints[0] == cpEvent && lastCp != 1)
         {   // This is the start
             StartRace(other.GetComponentInParent<WheelVehicle>());
         }
-        else if (_lastCP < checkPoints.Length && checkPoints[_lastCP] == cpEvent)
+        else if (lastCp < checkPoints.Length && checkPoints[lastCp] == cpEvent)
         {   // This is the next logical CP
-            Debug.Log("CP: " + _lastCP.ToString());
+            Debug.Log("CP: " + lastCp.ToString());
 
-            _lastCP++;
+            lastCp++;
         }
     }
 }

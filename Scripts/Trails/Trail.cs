@@ -4,7 +4,6 @@
  * This is distributed under the MIT Licence (see LICENSE.md for details)
  */
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace VehicleBehaviour.Trails
@@ -47,7 +46,7 @@ namespace VehicleBehaviour.Trails
 		//For registering if the object has been removed from the game (so you don't have to store it any more)
 		public bool Dead
 		{
-			get { return dead; } 
+			get => dead;
 			private set
 			{
 				dead = true;
@@ -81,10 +80,7 @@ namespace VehicleBehaviour.Trails
 		}
 
 		//Tells you if the trail is emitting or not
-		public bool Finished
-		{
-			get { return finished; }
-		}
+		public bool Finished => finished;
 
 		// Updates the state of the trail - Note: this must be called manually
 		public void Update () 

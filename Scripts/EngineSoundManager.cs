@@ -3,8 +3,7 @@
  * 
  * This is distributed under the MIT Licence (see LICENSE.md for details)
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 namespace VehicleBehaviour {
@@ -25,38 +24,38 @@ namespace VehicleBehaviour {
         [Range(0.0f, 0.1f)]
         public float pitchSpeed = 0.05f;
 
-        private AudioSource _source;
-        private WheelVehicle _vehicle;
+        private AudioSource source;
+        private WheelVehicle vehicle;
         
         void Start () {
-            _source = GetComponent<AudioSource>();
-            _vehicle = GetComponent<WheelVehicle>();
+            source = GetComponent<AudioSource>();
+            vehicle = GetComponent<WheelVehicle>();
         }
         
         void Update () {
-            if (_vehicle.Handbrake && _source.clip == rolling)
+            if (vehicle.Handbrake && source.clip == rolling)
             {
-                _source.clip = stopping;
-                _source.Play();
+                source.clip = stopping;
+                source.Play();
             }
 
-            if (!_vehicle.Handbrake && (_source.clip == stopping || _source.clip == null))
+            if (!vehicle.Handbrake && (source.clip == stopping || source.clip == null))
             {
-                _source.clip = starting;
-                _source.Play();
+                source.clip = starting;
+                source.Play();
 
-                _source.pitch = 1;
+                source.pitch = 1;
             }
 
-            if (!_vehicle.Handbrake && !_source.isPlaying)
+            if (!vehicle.Handbrake && !source.isPlaying)
             {
-                _source.clip = rolling;
-                _source.Play();
+                source.clip = rolling;
+                source.Play();
             }
 
-            if (_source.clip == rolling)
+            if (source.clip == rolling)
             {
-                _source.pitch = Mathf.Lerp(_source.pitch, minPitch + Mathf.Abs(_vehicle.Speed) / flatoutSpeed, pitchSpeed);
+                source.pitch = Mathf.Lerp(source.pitch, minPitch + Mathf.Abs(vehicle.Speed) / flatoutSpeed, pitchSpeed);
             }
         }
     }

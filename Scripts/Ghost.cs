@@ -10,7 +10,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace VehicleBehaviour 
 {
@@ -34,37 +34,37 @@ namespace VehicleBehaviour
 	public class Ghost : MonoBehaviour 
 	{
 		// List of data loaded
-		List<GhostData> _data = null;
+		List<GhostData> data = null;
 
 		// Is the replay running
-		public bool run;
+		public bool run = false;
 
 		// Time anchor for the replay
-		float _startTime = 0;
+		float startTime = 0;
 
 		// The length in seconds of the saved race
-		public float duration 
+		public float Duration 
 		{ internal set; get;}
 
 		// Frequency in Hz of the saved data
-		public int freq
+		public int Freq
 		{ internal set; get;}
 
 		// True if the data has been loaded
-		public bool exist 
+		public bool Exist 
 		{ internal set; get;}
 
 		// A recorded ghosst can also have a score saved with it
-		public float score
+		public float Score
 		{ internal set; get;}
 
 		// Ref to the WheelVehicle
-		WheelVehicle _vehicle;
+		WheelVehicle vehicle;
 		// Ref to the Rigidbody
-		Rigidbody _rb;
+		Rigidbody rb;
 		
 		// List of filenames to try to open on start
-		[SerializeField] string[] _saveFileNames;
+		[FormerlySerializedAs("_saveFileNames")] [SerializeField] string[] saveFileNames = new string[0];
 
 		void Start () 
 		{
@@ -72,48 +72,48 @@ namespace VehicleBehaviour
 			LoadData();
 
 			// GetComponents
-			_vehicle = GetComponent<WheelVehicle>();
-			_rb = GetComponent<Rigidbody>();
+			vehicle = GetComponent<WheelVehicle>();
+			rb = GetComponent<Rigidbody>();
 		}
 		
 		// Update is called once per frame
 		void Update () 
 		{
 			// Time since the ghost started
-			float time = Time.realtimeSinceStartup - _startTime;
+			float time = Time.realtimeSinceStartup - startTime;
 			// Index of the data according to time
-			int index = Mathf.Clamp((int)(time * freq), 0, _data != null ? _data.Count - 2 : 0);
+			int index = Mathf.Clamp((int)(time * Freq), 0, data != null ? data.Count - 2 : 0);
 
 			// Read and apply data
-			if (run && ((time < duration && index < _data.Count - 1) || _startTime == 0) && _data != null)
+			if (run && ((time < Duration && index < data.Count - 1) || startTime == 0) && data != null)
 			{
-				if (_startTime == 0)
-					_startTime = Time.realtimeSinceStartup;
+				if (startTime == 0)
+					startTime = Time.realtimeSinceStartup;
 
-				GhostData d = _data[index];
-				GhostData df = _data[index + 1];
+				GhostData d = data[index];
+				GhostData df = data[index + 1];
 
 				Vector3 pos = new Vector3(d.position[0], d.position[1], d.position[2]);
 				Vector3 posf = new Vector3(df.position[0], df.position[1], df.position[2]);
-				transform.position = Vector3.Lerp(pos, posf, (time * freq) - index);
+				transform.position = Vector3.Lerp(pos, posf, (time * Freq) - index);
 
 				Quaternion rot = new Quaternion(d.rotation[0], d.rotation[1], d.rotation[2], d.rotation[3]);
 				Quaternion rotf = new Quaternion(df.rotation[0], df.rotation[1], df.rotation[2], df.rotation[3]);
-				transform.rotation = Quaternion.Lerp(rot, rotf, (time * freq) - index);
+				transform.rotation = Quaternion.Lerp(rot, rotf, (time * Freq) - index);
 
-				if (_vehicle != null)
+				if (vehicle != null)
 				{
-					_vehicle.Throttle = d.throttle;
-					_vehicle.Steering = d.steering;
-					_vehicle.boosting = d.boost;
-					_vehicle.Drift = d.drift;
+					vehicle.Throttle = d.throttle;
+					vehicle.Steering = d.steering;
+					vehicle.boosting = d.boost;
+					vehicle.Drift = d.drift;
 				}
 
-				if (_rb != null)
+				if (rb != null)
 				{
 					Vector3 speed = new Vector3(d.speed[0], d.speed[1], d.speed[2]);
 					Vector3 speedf = new Vector3(df.speed[0], df.speed[1], df.speed[2]);
-					_rb.velocity = Vector3.Lerp(speed, speedf, (time * freq) - index);
+					rb.velocity = Vector3.Lerp(speed, speedf, (time * Freq) - index);
 				}
 			}
 		}
@@ -121,23 +121,23 @@ namespace VehicleBehaviour
 		// Private method to load first found in _saveFileNames
 		void LoadData()
 		{
-			exist = false;
+			Exist = false;
 
-			foreach(string filename in _saveFileNames)
+			foreach(string filename in saveFileNames)
 			{
 				if (File.Exists(Application.persistentDataPath + "/" + filename))
 				{
 					Debug.Log("Loaded ghost for " + name + " at " + Application.persistentDataPath + "/" + filename);
 					IFormatter formatter = new BinaryFormatter();
 					Stream stream = new FileStream(Application.persistentDataPath + "/" + filename, FileMode.Open, FileAccess.Read, FileShare.Read);
-					duration = (float)formatter.Deserialize(stream);
-					freq = (int)formatter.Deserialize(stream);
-					score = (float)formatter.Deserialize(stream);
+					Duration = (float)formatter.Deserialize(stream);
+					Freq = (int)formatter.Deserialize(stream);
+					Score = (float)formatter.Deserialize(stream);
 
-					_data = (List<GhostData>)formatter.Deserialize(stream);
+					data = (List<GhostData>)formatter.Deserialize(stream);
 					stream.Close();
 
-					exist = true;
+					Exist = true;
 
 					break;
 				}
@@ -152,14 +152,14 @@ namespace VehicleBehaviour
 				Debug.Log("Loaded ghost for " + name + " at " + Application.persistentDataPath + "/" + filename);
 				IFormatter formatter = new BinaryFormatter();
 				Stream stream = new FileStream(Application.persistentDataPath + "/" + filename, FileMode.Open, FileAccess.Read, FileShare.Read);
-				duration = (float)formatter.Deserialize(stream);
-				freq = (int)formatter.Deserialize(stream);
-				score = (float)formatter.Deserialize(stream);
+				Duration = (float)formatter.Deserialize(stream);
+				Freq = (int)formatter.Deserialize(stream);
+				Score = (float)formatter.Deserialize(stream);
 
-				_data = (List<GhostData>)formatter.Deserialize(stream);
+				data = (List<GhostData>)formatter.Deserialize(stream);
 				stream.Close();
 
-				exist = true;
+				Exist = true;
 			}
 		}
 
@@ -175,7 +175,7 @@ namespace VehicleBehaviour
 
 		public void RestartGhost()
 		{
-			_startTime = 0;
+			startTime = 0;
 
 			StartGhost();
 		}
@@ -185,18 +185,18 @@ namespace VehicleBehaviour
 	public class GhostRecorder 
 	{
 		// Components
-		WheelVehicle _vehicle = null;
-		Transform _vehicleT = null;
-		Rigidbody _vehicleR = null;
+		WheelVehicle vehicle = null;
+		Transform vehicleT = null;
+		Rigidbody vehicleR = null;
 
 		// Data list
-		List<GhostData> _data = null;
+		List<GhostData> data = null;
 
 		// The length in seconds of the saved race
-		public float duration 
+		public float Duration 
 		{ internal set; get;}
 		// Frequency in Hz of the saved data
-		public int freq
+		public int Freq
 		{ internal set; get;}
 		
 		// Internal bool used to stop recording
@@ -208,62 +208,62 @@ namespace VehicleBehaviour
 		// Constructor setting up the recorder
 		public GhostRecorder(float duration, int freq, ref WheelVehicle vehicle)
 		{
-			_vehicle = vehicle;
-			_vehicleT = vehicle.transform;
-			_vehicleR = vehicle.GetComponent<Rigidbody>();
+			this.vehicle = vehicle;
+			vehicleT = vehicle.transform;
+			vehicleR = vehicle.GetComponent<Rigidbody>();
 
 			
-			this.duration = duration;
-			this.freq = freq;
+			this.Duration = duration;
+			this.Freq = freq;
 
-			_data = new List<GhostData>((int)(this.duration * this.freq));
+			data = new List<GhostData>((int)(this.Duration * this.Freq));
 		}
 
 		// Record coroutine to start from your gamemanager monobehavior
-		float _startTime = Time.realtimeSinceStartup;
+		float startTime = Time.realtimeSinceStartup;
 		public IEnumerator RecordCoroutine(bool allowOverTime = false)
 		{
-			WaitForSeconds wait = new WaitForSeconds(1.0f/freq);
+			WaitForSeconds wait = new WaitForSeconds(1.0f/Freq);
 			
-			Debug.Log("Recording ghost for " + _vehicle.name);
+			Debug.Log("Recording ghost for " + vehicle.name);
 
-			while (!requestStop && _data.Count <= _data.Capacity)
+			while (!requestStop && data.Count <= data.Capacity)
 			{
 				GhostData d = new GhostData();
 
-				d.position[0] = _vehicleT.position[0];
-				d.position[1] = _vehicleT.position[1];
-				d.position[2] = _vehicleT.position[2];
+				d.position[0] = vehicleT.position[0];
+				d.position[1] = vehicleT.position[1];
+				d.position[2] = vehicleT.position[2];
 
-				d.rotation[0] = _vehicleT.rotation[0];
-				d.rotation[1] = _vehicleT.rotation[1];
-				d.rotation[2] = _vehicleT.rotation[2];
-				d.rotation[3] = _vehicleT.rotation[3];
+				d.rotation[0] = vehicleT.rotation[0];
+				d.rotation[1] = vehicleT.rotation[1];
+				d.rotation[2] = vehicleT.rotation[2];
+				d.rotation[3] = vehicleT.rotation[3];
 
-				d.speed[0] = _vehicleR.velocity[0];
-				d.speed[1] = _vehicleR.velocity[1];
-				d.speed[2] = _vehicleR.velocity[2];
+				d.speed[0] = vehicleR.velocity[0];
+				d.speed[1] = vehicleR.velocity[1];
+				d.speed[2] = vehicleR.velocity[2];
 
-				d.throttle = _vehicle.Throttle;
-				d.steering = _vehicle.Steering;
-				d.boost = _vehicle.boosting;
-				d.drift = _vehicle.Drift;
+				d.throttle = vehicle.Throttle;
+				d.steering = vehicle.Steering;
+				d.boost = vehicle.boosting;
+				d.drift = vehicle.Drift;
 
-				_data.Add(d);
+				data.Add(d);
 
 				yield return wait;
 
-				if (_data.Count == _data.Capacity && allowOverTime)
-					_data.Capacity += freq * 10;
+				if (data.Count == data.Capacity && allowOverTime)
+					data.Capacity += Freq * 10;
 			}
 
-			Debug.Log("Finished recording ghost for " + _vehicle.name);
+			Debug.Log("Finished recording ghost for " + vehicle.name);
 		}
 
 		// Stop the recording
 		public void Stop()
 		{
-			duration = Time.realtimeSinceStartup - _startTime;
+			Duration = Time.realtimeSinceStartup - startTime;
 			requestStop = true;
 		}
 
@@ -272,13 +272,13 @@ namespace VehicleBehaviour
 		{
 			IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(Application.persistentDataPath + "/" + saveName, FileMode.Create, FileAccess.Write, FileShare.None);
-			formatter.Serialize(stream, duration);
-			formatter.Serialize(stream, freq);
+			formatter.Serialize(stream, Duration);
+			formatter.Serialize(stream, Freq);
             formatter.Serialize(stream, score);
-            formatter.Serialize(stream, _data);
+            formatter.Serialize(stream, data);
             stream.Close();
 
-			Debug.Log("Saved ghost for " + _vehicle.name + " at " + Application.persistentDataPath + "/" + saveName);
+			Debug.Log("Saved ghost for " + vehicle.name + " at " + Application.persistentDataPath + "/" + saveName);
 		}
 	}
 }
