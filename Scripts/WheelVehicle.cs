@@ -3,12 +3,15 @@
  * 
  * This is distributed under the MIT Licence (see LICENSE.md for details)
  */
+
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 #if MULTIOSCONTROLS
     using MOSC;
 #endif
 
+[assembly: InternalsVisibleTo("VehicleBehaviour.Dots")]
 namespace VehicleBehaviour {
     [RequireComponent(typeof(Rigidbody))]
     public class WheelVehicle : MonoBehaviour {
@@ -24,12 +27,13 @@ namespace VehicleBehaviour {
         } 
 
         // Input names to read using GetAxis
-        [SerializeField] string throttleInput = "Throttle";
-        [SerializeField] string brakeInput = "Brake";
-        [SerializeField] string turnInput = "Horizontal";
-        [SerializeField] string jumpInput = "Jump";
-        [SerializeField] string driftInput = "Drift";
-	    [SerializeField] string boostInput = "Boost";
+        [SerializeField] internal VehicleInputs m_Inputs;
+        string throttleInput => m_Inputs.ThrottleInput;
+        string brakeInput => m_Inputs.BrakeInput;
+        string turnInput => m_Inputs.TurnInput;
+        string jumpInput => m_Inputs.JumpInput;
+        string driftInput => m_Inputs.DriftInput;
+	    string boostInput => m_Inputs.BoostInput;
         
         /* 
          *  Turn input curve: x real input, y value used
@@ -209,7 +213,7 @@ namespace VehicleBehaviour {
         
         // Private variables set at the start
         Rigidbody rb = default;
-        WheelCollider[] wheels = new WheelCollider[0];
+        internal WheelCollider[] wheels = new WheelCollider[0];
 
         // Init rigidbody, center of mass, wheels and more
         void Start() {
@@ -286,6 +290,7 @@ namespace VehicleBehaviour {
 
             foreach (WheelCollider wheel in wheels)
             {
+                wheel.motorTorque = 0.0001f;
                 wheel.brakeTorque = 0;
             }
 
@@ -299,7 +304,7 @@ namespace VehicleBehaviour {
                     wheel.brakeTorque = brakeForce;
                 }
             }
-            else if (Mathf.Abs(speed) < 4 || Mathf.Sign(speed) == Mathf.Sign(throttle))
+            else if (throttle != 0 && (Mathf.Abs(speed) < 4 || Mathf.Sign(speed) == Mathf.Sign(throttle)))
             {
                 foreach (WheelCollider wheel in driveWheel)
                 {

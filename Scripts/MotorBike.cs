@@ -7,10 +7,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-
-namespace VehicleBehaviour {
-
-	public class MotorBike : MonoBehaviour {
+namespace VehicleBehaviour 
+{
+	public class MotorBike : MonoBehaviour 
+	{
 
 		[FormerlySerializedAs("_maxAngleSpeed")]
 		[Header("Steering")]
@@ -23,10 +23,10 @@ namespace VehicleBehaviour {
 			set => maxAngle = Mathf.Clamp(value, 0.0f, 90.0f);
 		}
 
-		[FormerlySerializedAs("_wheelieInput")]
+		[SerializeField] string wheelieInput => vehicle.m_Inputs.WheelieInput;
+		
 		[Header("Wheeling")]
-		[SerializeField] string wheelieInput = "Boost";
-		[FormerlySerializedAs("_wheelieForce")] [SerializeField][Range(0.0f, 20.0f)] float wheelieForce = 10.0f;
+		[FormerlySerializedAs("_wheelieForce")] [SerializeField][Range(0.0f, 50.0f)] float wheelieForce = 10.0f;
 		public float WheelieForce { get => wheelieForce;
 			set => wheelieForce = Mathf.Clamp(value, 0.0f, 20.0f);
 		}
@@ -39,10 +39,10 @@ namespace VehicleBehaviour {
 			set => maxWheelieSpeed = Mathf.Clamp(value, 0.0f, 20.0f);
 		}
 
-		[FormerlySerializedAs("_stopieInput")]
+		[SerializeField] string stopieInput => vehicle.m_Inputs.StopieInput;
+
 		[Header("Stopie")]
-		[SerializeField] string stopieInput = "Brake";
-		[FormerlySerializedAs("_stopieForce")] [SerializeField][Range(0.0f, 20.0f)] float stopieForce = 10.0f;
+		[FormerlySerializedAs("_stopieForce")] [SerializeField][Range(0.0f, 50.0f)] float stopieForce = 10.0f;
 		public float StopieForce { get => stopieForce;
 			set => stopieForce = Mathf.Clamp(value, 0.0f, 20.0f);
 		}
@@ -117,7 +117,7 @@ namespace VehicleBehaviour {
 
 				if (Input.GetAxis(stopieInput) != 0 && vehicle.Throttle < 0)
 				{
-					float wheeliefactor = Input.GetAxis(stopieInput) * (stopieForce * Mathf.Clamp01(vehicle.Speed / maxStopieSpeed));
+					float wheeliefactor = Input.GetAxis(stopieInput) * (stopieForce * (1 - Mathf.Clamp01(vehicle.Speed / maxStopieSpeed)));
 					rb.AddRelativeTorque(new Vector3(-vehicle.Throttle * wheeliefactor * rb.mass, 0, 0));
 				}
 
