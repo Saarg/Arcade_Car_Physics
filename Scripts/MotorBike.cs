@@ -117,7 +117,7 @@ namespace VehicleBehaviour
 
 				if (Input.GetAxis(stopieInput) != 0 && vehicle.Throttle < 0)
 				{
-					float wheeliefactor = Input.GetAxis(stopieInput) * (stopieForce * (1 - Mathf.Clamp01(vehicle.Speed / maxStopieSpeed)));
+					float wheeliefactor = Input.GetAxis(stopieInput) * (stopieForce * Mathf.Clamp01(vehicle.Speed / maxStopieSpeed));
 					rb.AddRelativeTorque(new Vector3(-vehicle.Throttle * wheeliefactor * rb.mass, 0, 0));
 				}
 

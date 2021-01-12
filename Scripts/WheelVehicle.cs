@@ -311,7 +311,7 @@ namespace VehicleBehaviour {
                     wheel.motorTorque = throttle * motorTorque.Evaluate(speed) * diffGearing / driveWheel.Length;
                 }
             }
-            else
+            else if (throttle != 0)
             {
                 foreach (WheelCollider wheel in wheels)
                 {
