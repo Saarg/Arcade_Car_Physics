@@ -352,26 +352,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7924977047200989950, guid: 977c26c2b2cf744088ebb8a3f5d77386, type: 3}
-      propertyPath: handbrake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7954716994611262086, guid: 977c26c2b2cf744088ebb8a3f5d77386, type: 3}
-      propertyPath: m_ForwardFriction.m_Stiffness
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7954723679976029716, guid: 977c26c2b2cf744088ebb8a3f5d77386, type: 3}
-      propertyPath: m_ForwardFriction.m_Stiffness
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7954814726657131492, guid: 977c26c2b2cf744088ebb8a3f5d77386, type: 3}
-      propertyPath: m_ForwardFriction.m_Stiffness
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7956716742518670124, guid: 977c26c2b2cf744088ebb8a3f5d77386, type: 3}
-      propertyPath: m_ForwardFriction.m_Stiffness
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 977c26c2b2cf744088ebb8a3f5d77386, type: 3}
 --- !u!4 &237736443 stripped

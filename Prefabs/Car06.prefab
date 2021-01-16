@@ -42,7 +42,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7811636413415899816}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
@@ -123,7 +123,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   driveWheel:
-  - {fileID: 7954814726657131492}
+  - {fileID: 7956716742518670124}
+  - {fileID: 7954723679976029716}
+  - {fileID: 7954716994611262086}
   - {fileID: 7954814726657131492}
   turnWheel:
   - {fileID: 7956716742518670124}
@@ -154,12 +156,12 @@ MonoBehaviour:
     m_RotationOrder: 4
   diffGearing: 8
   brakeForce: 1000
-  steerAngle: 45
+  steerAngle: 50
   steerSpeed: 0.15
   jumpVel: 1.5
   driftIntensity: 0.4
   centerOfMass: {fileID: 7817677969600844606}
-  downforce: 2
+  downforce: 8
   handbrake: 1
   allowDrift: 1
   speed: 0
@@ -10116,7 +10118,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 1.2
   m_Enabled: 1
 --- !u!114 &7925044100675540944
 MonoBehaviour:
@@ -10345,7 +10347,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 1.2
   m_Enabled: 1
 --- !u!114 &7924798822467538956
 MonoBehaviour:
