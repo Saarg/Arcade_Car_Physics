@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThrottleInput: Throttle
   BrakeInput: Brake
-  TurnInput: Horizontal
+  TurnInput: Steering
   JumpInput: Jump
   DriftInput: Drift
   BoostInput: Boost
