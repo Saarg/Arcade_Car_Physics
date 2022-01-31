@@ -4,7 +4,6 @@
  * This is distributed under the MIT Licence (see LICENSE.md for details)
  */
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace VehicleBehaviour.Trails
@@ -31,10 +30,7 @@ namespace VehicleBehaviour.Trails
 		WheelVehicle vehicle;
 
 		//Checks if the most recent trail is active or not
-		public bool Active
-		{
-			get { return (trails.Count == 0?false:(!trails.Last.Value.Finished)); }
-		}
+		public bool Active => (trails.Count == 0?false:(!trails.Last.Value.Finished));
 
 		void Start () {
 			wheel = GetComponent<WheelCollider> ();

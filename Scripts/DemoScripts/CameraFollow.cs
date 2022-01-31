@@ -4,8 +4,6 @@
  * This is distributed under the MIT Licence (see LICENSE.md for details)
  */
 using System.Text;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,16 +11,20 @@ namespace VehicleBehaviour.Utils {
 	public class CameraFollow : MonoBehaviour {
 		// Should the camera follow the target
 		[SerializeField] bool follow = false;
-		public bool Follow { get { return follow; } set { follow = value; } }
+		public bool Follow
+		{
+			get => follow;
+			set => follow = value;
+		}
 
 		// Current target
-		[SerializeField] Transform target;
+		[SerializeField] Transform target = default;
 
 		// ALl possible targets
-		[SerializeField] Transform[] targets;
+		[SerializeField] Transform[] targets = new Transform[0];
 
 		// Offset from the target position
-		[SerializeField] Vector3 offset;
+		[SerializeField] Vector3 offset = -Vector3.forward;
 
 		// Camera speeds
 		[Range(0, 10)]
@@ -31,11 +33,11 @@ namespace VehicleBehaviour.Utils {
 		[SerializeField] float lerpRotationMultiplier = 1f;
 
 		// Speedometer
-		[SerializeField] Text speedometer;
+		[SerializeField] Text speedometer = null;
 
 		// We use a rigidbody to prevent the camera from going in walls but it means sometime it can get stuck
 		Rigidbody rb;
-		Rigidbody target_rb;
+		Rigidbody targetRb;
 
 		WheelVehicle vehicle;
 

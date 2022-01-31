@@ -5,10 +5,18 @@
 
 This unity package provides scripts ans exemples to build arcade cars in Unity3D using the built in wheel colliders. While the wheel colliders have a reputation to be buggy and unstable I found that it is not true but they are a bit tricky to get right.
 
-In this package you'll find one demo scene with 4 exemple prefabs with low poly models made using [kenney's asset forge](https://kenney.nl/). Those prefabs are using the default unity inputs (Horizontal, Vertical, Jump, Fire1-3) but you'll need to change those to get a better driving experience and I would advice the use of a controller like most other car games.
+In this package you'll find one demo scene with 4 exemple prefabs with low poly models made using [kenney's asset forge](https://kenney.nl/).
 
-[How to create a car, video tutorial](https://youtu.be/XUXuC45BkIk)
-[More documentation and demo](http://saarg.me/acp/2.0/demo/index.html)
+## Getting Started
+
+First start by changing the inputs in the DemoInputs asset to  use inputs in you project settings (Edit > Project Settings > Inputs)
+
+* I have errors about missing inputs! Go to your project settings and add the missing inputs
+* Materials are pink/missing! Unity's rendering pipelines have changed since this plugin started, feel free to change the meshes four your own
+* How do I change the meshes? Look in the car prefabs, you should find the Body object and replace his children with your own mesh and move the wheels
+
+[More documentation can be found here](https://github.com/Saarg/Arcade_Car_Physics/wiki)
+[How to create a car, video tutorial](https://youtu.be/XUXuC45BkIk), I'm not very good at tutorials so this is just a video of me building on of the cars from the demo.
 
 ## Vehicle
 
@@ -16,7 +24,7 @@ The typical vehicle's composition is as follow:
 ```
 ├── CarPrefab
 │   ├── Body
-│   |   ├── 3D mesh
+│   |   ├── 3D mesh REPLACE THIS WITH YOUR OWN MESH
 │   ├── Front Left Wheel
 │   |   ├── Wheelcollider
 │   |   ├── Suspension (Script)

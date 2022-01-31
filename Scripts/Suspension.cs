@@ -3,8 +3,6 @@
  * 
  * This is distributed under the MIT Licence (see LICENSE.md for details)
  */
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -23,7 +21,7 @@ namespace VehicleBehaviour {
         public bool cancelSteerAngle = false;
         [FormerlySerializedAs("_wheelModel")]
         public GameObject wheelModel;
-        private WheelCollider _wheelCollider;
+        private WheelCollider wheelCollider;
 
         public Vector3 localRotOffset;
 
@@ -33,7 +31,7 @@ namespace VehicleBehaviour {
         {
             lastUpdate = Time.realtimeSinceStartup;
 
-            _wheelCollider = GetComponent<WheelCollider>();
+            wheelCollider = GetComponent<WheelCollider>();
         }
         
         void FixedUpdate()
@@ -45,11 +43,11 @@ namespace VehicleBehaviour {
             }
             lastUpdate = Time.realtimeSinceStartup;
 
-            if (wheelModel && _wheelCollider)
+            if (wheelModel && wheelCollider)
             {
                 Vector3 pos = new Vector3(0, 0, 0);
                 Quaternion quat = new Quaternion();
-                _wheelCollider.GetWorldPose(out pos, out quat);
+                wheelCollider.GetWorldPose(out pos, out quat);
 
                 wheelModel.transform.rotation = quat;
                 if (cancelSteerAngle)
@@ -59,7 +57,7 @@ namespace VehicleBehaviour {
                 wheelModel.transform.position = pos;
 
                 WheelHit wheelHit;
-                _wheelCollider.GetGroundHit(out wheelHit);
+                wheelCollider.GetGroundHit(out wheelHit);
             }
         }
     }

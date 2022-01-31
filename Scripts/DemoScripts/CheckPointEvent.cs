@@ -3,8 +3,7 @@
  * 
  * This is distributed under the MIT Licence (see LICENSE.md for details)
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class CheckPointEvent : MonoBehaviour

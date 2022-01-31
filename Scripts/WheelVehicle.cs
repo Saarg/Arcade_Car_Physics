@@ -3,15 +3,15 @@
  * 
  * This is distributed under the MIT Licence (see LICENSE.md for details)
  */
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 #if MULTIOSCONTROLS
     using MOSC;
 #endif
 
+[assembly: InternalsVisibleTo("VehicleBehaviour.Dots")]
 namespace VehicleBehaviour {
     [RequireComponent(typeof(Rigidbody))]
     public class WheelVehicle : MonoBehaviour {
@@ -22,15 +22,18 @@ namespace VehicleBehaviour {
     #endif
         // If isPlayer is false inputs are ignored
         [SerializeField] bool isPlayer = true;
-        public bool IsPlayer { get{ return isPlayer; } set{ isPlayer = value; } } 
+        public bool IsPlayer { get => isPlayer;
+            set => isPlayer = value;
+        } 
 
         // Input names to read using GetAxis
-        [SerializeField] string throttleInput = "Throttle";
-        [SerializeField] string brakeInput = "Brake";
-        [SerializeField] string turnInput = "Horizontal";
-        [SerializeField] string jumpInput = "Jump";
-        [SerializeField] string driftInput = "Drift";
-	    [SerializeField] string boostInput = "Boost";
+        [SerializeField] internal VehicleInputs m_Inputs;
+        string throttleInput => m_Inputs.ThrottleInput;
+        string brakeInput => m_Inputs.BrakeInput;
+        string turnInput => m_Inputs.TurnInput;
+        string jumpInput => m_Inputs.JumpInput;
+        string driftInput => m_Inputs.DriftInput;
+	    string boostInput => m_Inputs.BoostInput;
         
         /* 
          *  Turn input curve: x real input, y value used
@@ -39,11 +42,11 @@ namespace VehicleBehaviour {
         [SerializeField] AnimationCurve turnInputCurve = AnimationCurve.Linear(-1.0f, -1.0f, 1.0f, 1.0f);
 
         [Header("Wheels")]
-        [SerializeField] WheelCollider[] driveWheel;
-        public WheelCollider[] DriveWheel { get { return driveWheel; } }
-        [SerializeField] WheelCollider[] turnWheel;
+        [SerializeField] WheelCollider[] driveWheel = new WheelCollider[0];
+        public WheelCollider[] DriveWheel => driveWheel;
+        [SerializeField] WheelCollider[] turnWheel = new WheelCollider[0];
 
-        public WheelCollider[] TurnWheel { get { return turnWheel; } }
+        public WheelCollider[] TurnWheel => turnWheel;
 
         // This code checks if the car is grounded only when needed and the data is old enough
         bool isGrounded = false;
@@ -74,31 +77,43 @@ namespace VehicleBehaviour {
         // Differential gearing ratio
         [Range(2, 16)]
         [SerializeField] float diffGearing = 4.0f;
-        public float DiffGearing { get { return diffGearing; } set { diffGearing = value; } }
+        public float DiffGearing { get => diffGearing;
+            set => diffGearing = value;
+        }
 
         // Basicaly how hard it brakes
         [SerializeField] float brakeForce = 1500.0f;
-        public float BrakeForce { get { return brakeForce; } set { brakeForce = value; } }
+        public float BrakeForce { get => brakeForce;
+            set => brakeForce = value;
+        }
 
         // Max steering hangle, usualy higher for drift car
         [Range(0f, 50.0f)]
         [SerializeField] float steerAngle = 30.0f;
-        public float SteerAngle { get { return steerAngle; } set { steerAngle = Mathf.Clamp(value, 0.0f, 50.0f); } }
+        public float SteerAngle { get => steerAngle;
+            set => steerAngle = Mathf.Clamp(value, 0.0f, 50.0f);
+        }
 
         // The value used in the steering Lerp, 1 is instant (Strong power steering), and 0 is not turning at all
         [Range(0.001f, 1.0f)]
         [SerializeField] float steerSpeed = 0.2f;
-        public float SteerSpeed { get { return steerSpeed; } set { steerSpeed = Mathf.Clamp(value, 0.001f, 1.0f); } }
+        public float SteerSpeed { get => steerSpeed;
+            set => steerSpeed = Mathf.Clamp(value, 0.001f, 1.0f);
+        }
 
         // How hight do you want to jump?
         [Range(1f, 1.5f)]
         [SerializeField] float jumpVel = 1.3f;
-        public float JumpVel { get { return jumpVel; } set { jumpVel = Mathf.Clamp(value, 1.0f, 1.5f); } }
+        public float JumpVel { get => jumpVel;
+            set => jumpVel = Mathf.Clamp(value, 1.0f, 1.5f);
+        }
 
         // How hard do you want to drift?
         [Range(0.0f, 2f)]
         [SerializeField] float driftIntensity = 1f;
-        public float DriftIntensity { get { return driftIntensity; } set { driftIntensity = Mathf.Clamp(value, 0.0f, 2.0f); }}
+        public float DriftIntensity { get => driftIntensity;
+            set => driftIntensity = Mathf.Clamp(value, 0.0f, 2.0f);
+        }
 
         // Reset Values
         Vector3 spawnPosition;
@@ -109,37 +124,50 @@ namespace VehicleBehaviour {
          *  I recomment having it between the center of the wheels and the bottom of the car's body
          *  Move it a bit to the from or bottom according to where the engine is
          */
-        [SerializeField] Transform centerOfMass;
+        [SerializeField] Transform centerOfMass = null;
 
         // Force aplied downwards on the car, proportional to the car speed
         [Range(0.5f, 10f)]
         [SerializeField] float downforce = 1.0f;
-        public float Downforce { get{ return downforce; } set{ downforce = Mathf.Clamp(value, 0, 5); } }     
+
+        public float Downforce
+        {
+            get => downforce;
+            set => downforce = Mathf.Clamp(value, 0, 5);
+        }     
 
         // When IsPlayer is false you can use this to control the steering
         float steering;
-        public float Steering { get{ return steering; } set{ steering = Mathf.Clamp(value, -1f, 1f); } } 
+        public float Steering { get => steering;
+            set => steering = Mathf.Clamp(value, -1f, 1f);
+        } 
 
         // When IsPlayer is false you can use this to control the throttle
         float throttle;
-        public float Throttle { get{ return throttle; } set{ throttle = Mathf.Clamp(value, -1f, 1f); } } 
+        public float Throttle { get => throttle;
+            set => throttle = Mathf.Clamp(value, -1f, 1f);
+        } 
 
         // Like your own car handbrake, if it's true the car will not move
         [SerializeField] bool handbrake;
-        public bool Handbrake { get{ return handbrake; } set{ handbrake = value; } } 
+        public bool Handbrake { get => handbrake;
+            set => handbrake = value;
+        } 
         
         // Use this to disable drifting
         [HideInInspector] public bool allowDrift = true;
         bool drift;
-        public bool Drift { get{ return drift; } set{ drift = value; } }         
+        public bool Drift { get => drift;
+            set => drift = value;
+        }         
 
         // Use this to read the current car speed (you'll need this to make a speedometer)
         [SerializeField] float speed = 0.0f;
-        public float Speed { get{ return speed; } }
+        public float Speed => speed;
 
         [Header("Particles")]
         // Exhaust fumes
-        [SerializeField] ParticleSystem[] gasParticles;
+        [SerializeField] ParticleSystem[] gasParticles = new ParticleSystem[0];
 
         [Header("Boost")]
         // Disable boost
@@ -147,23 +175,31 @@ namespace VehicleBehaviour {
 
         // Maximum boost available
         [SerializeField] float maxBoost = 10f;
-        public float MaxBoost { get { return maxBoost; } set {maxBoost = value;} }
+        public float MaxBoost { get => maxBoost;
+            set => maxBoost = value;
+        }
 
         // Current boost available
         [SerializeField] float boost = 10f;
-        public float Boost { get { return boost; } set { boost = Mathf.Clamp(value, 0f, maxBoost); } }
+        public float Boost { get => boost;
+            set => boost = Mathf.Clamp(value, 0f, maxBoost);
+        }
 
         // Regen boostRegen per second until it's back to maxBoost
         [Range(0f, 1f)]
         [SerializeField] float boostRegen = 0.2f;
-        public float BoostRegen { get { return boostRegen; } set { boostRegen = Mathf.Clamp01(value); } }
+        public float BoostRegen { get => boostRegen;
+            set => boostRegen = Mathf.Clamp01(value);
+        }
 
         /*
          *  The force applied to the car when boosting
          *  NOTE: the boost does not care if the car is grounded or not
          */
         [SerializeField] float boostForce = 5000;
-        public float BoostForce { get { return boostForce; } set { boostForce = value; } }
+        public float BoostForce { get => boostForce;
+            set => boostForce = value;
+        }
 
         // Use this to boost when IsPlayer is set to false
         public bool boosting = false;
@@ -171,13 +207,13 @@ namespace VehicleBehaviour {
         public bool jumping = false;
 
         // Boost particles and sound
-        [SerializeField] ParticleSystem[] boostParticles;
-        [SerializeField] AudioClip boostClip;
-        [SerializeField] AudioSource boostSource;
+        [SerializeField] ParticleSystem[] boostParticles = new ParticleSystem[0];
+        [SerializeField] AudioClip boostClip = default;
+        [SerializeField] AudioSource boostSource = default;
         
         // Private variables set at the start
-        Rigidbody _rb;
-        WheelCollider[] wheels;
+        Rigidbody rb = default;
+        internal WheelCollider[] wheels = new WheelCollider[0];
 
         // Init rigidbody, center of mass, wheels and more
         void Start() {
@@ -190,13 +226,13 @@ namespace VehicleBehaviour {
 
 		    boost = maxBoost;
 
-            _rb = GetComponent<Rigidbody>();
+            rb = GetComponent<Rigidbody>();
             spawnPosition = transform.position;
             spawnRotation = transform.rotation;
 
-            if (_rb != null && centerOfMass != null)
+            if (rb != null && centerOfMass != null)
             {
-                _rb.centerOfMass = centerOfMass.localPosition;
+                rb.centerOfMass = centerOfMass.localPosition;
             }
 
             wheels = GetComponentsInChildren<WheelCollider>();
@@ -227,7 +263,7 @@ namespace VehicleBehaviour {
         // Update everything
         void FixedUpdate () {
             // Mesure current speed
-            speed = transform.InverseTransformDirection(_rb.velocity).z * 3.6f;
+            speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f;
 
             // Get all the inputs!
             if (isPlayer) {
@@ -241,7 +277,7 @@ namespace VehicleBehaviour {
                 // Turn
                 steering = turnInputCurve.Evaluate(GetInput(turnInput)) * steerAngle;
                 // Dirft
-                drift = GetInput(driftInput) > 0 && _rb.velocity.sqrMagnitude > 100;
+                drift = GetInput(driftInput) > 0 && rb.velocity.sqrMagnitude > 100;
                 // Jump
                 jumping = GetInput(jumpInput) != 0;
             }
@@ -254,6 +290,7 @@ namespace VehicleBehaviour {
 
             foreach (WheelCollider wheel in wheels)
             {
+                wheel.motorTorque = 0.0001f;
                 wheel.brakeTorque = 0;
             }
 
@@ -267,14 +304,14 @@ namespace VehicleBehaviour {
                     wheel.brakeTorque = brakeForce;
                 }
             }
-            else if (Mathf.Abs(speed) < 4 || Mathf.Sign(speed) == Mathf.Sign(throttle))
+            else if (throttle != 0 && (Mathf.Abs(speed) < 4 || Mathf.Sign(speed) == Mathf.Sign(throttle)))
             {
                 foreach (WheelCollider wheel in driveWheel)
                 {
                     wheel.motorTorque = throttle * motorTorque.Evaluate(speed) * diffGearing / driveWheel.Length;
                 }
             }
-            else
+            else if (throttle != 0)
             {
                 foreach (WheelCollider wheel in wheels)
                 {
@@ -287,12 +324,12 @@ namespace VehicleBehaviour {
                 if (!IsGrounded)
                     return;
                 
-                _rb.velocity += transform.up * jumpVel;
+                rb.velocity += transform.up * jumpVel;
             }
 
             // Boost
             if (boosting && allowBoost && boost > 0.1f) {
-                _rb.AddForce(transform.forward * boostForce);
+                rb.AddForce(transform.forward * boostForce);
 
                 boost -= Time.fixedDeltaTime;
                 if (boost < 0f) { boost = 0f; }
@@ -325,16 +362,16 @@ namespace VehicleBehaviour {
                 driftForce.Normalize();
 
                 if (steering != 0)
-                    driftForce *= _rb.mass * speed/7f * throttle * steering/steerAngle;
+                    driftForce *= rb.mass * speed/7f * throttle * steering/steerAngle;
                 Vector3 driftTorque = transform.up * 0.1f * steering/steerAngle;
 
 
-                _rb.AddForce(driftForce * driftIntensity, ForceMode.Force);
-                _rb.AddTorque(driftTorque * driftIntensity, ForceMode.VelocityChange);             
+                rb.AddForce(driftForce * driftIntensity, ForceMode.Force);
+                rb.AddTorque(driftTorque * driftIntensity, ForceMode.VelocityChange);             
             }
             
             // Downforce
-            _rb.AddForce(-transform.up * speed * downforce);
+            rb.AddForce(-transform.up * speed * downforce);
         }
 
         // Reposition the car to the start position
@@ -342,11 +379,11 @@ namespace VehicleBehaviour {
             transform.position = spawnPosition;
             transform.rotation = spawnRotation;
 
-            _rb.velocity = Vector3.zero;
-            _rb.angularVelocity = Vector3.zero;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
         }
 
-        public void toogleHandbrake(bool h)
+        public void ToogleHandbrake(bool h)
         {
             handbrake = h;
         }
